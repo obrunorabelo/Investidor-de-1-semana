@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-BR" class="scroll-smooth">
 
 <head>
     <meta charset="UTF-8">
@@ -15,495 +15,57 @@
         href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@500;600;700;800&display=swap"
         rel="stylesheet">
 
-    <!-- Styles -->
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            black: '#0a0a0a',
+                            dark: '#111111',
+                            gray: '#1a1a1a',
+                            orange: '#f97316', // Orange-500
+                            orangeHover: '#ea580c', // Orange-600
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Poppins', 'sans-serif'],
+                    },
+                    boxShadow: {
+                        'glow': '0 0 20px rgba(249, 115, 22, 0.3)',
+                        'glow-strong': '0 0 40px rgba(249, 115, 22, 0.5)',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Custom Styles (Animations & Cursor) -->
     <link rel="stylesheet" href="style.css">
 </head>
 
-<body>
+<body
+    class="bg-brand-black text-gray-300 font-sans antialiased overflow-x-hidden selection:bg-brand-orange selection:text-white">
+
     <!-- Custom Cursor Elements -->
     <div class="cursor-dot" data-cursor-dot></div>
     <div class="cursor-outline" data-cursor-outline></div>
 
     <!-- Sticky CTA Mobile -->
-    <div class="sticky-cta-mobile">
-        <a href="#oferta" class="cta-button pulse-animation">QUERO MINHA VAGA</a>
+    <div
+        class="fixed bottom-0 left-0 w-full bg-brand-black/90 backdrop-blur-md p-4 z-50 md:hidden border-t border-white/10">
+        <a href="#oferta"
+            class="block w-full bg-brand-orange text-white font-bold text-center py-3 rounded-full uppercase tracking-wider shadow-lg">
+            Quero Minha Vaga
+        </a>
     </div>
 
-    <!-- Hero Section -->
-    <header class="hero-section">
-        <div class="container hero-container">
-            <div class="hero-content reveal-left">
-                <div class="hero-badge">
-                    <span>CURSO INVESTIDOR EM 1 SEMANA</span>
-                </div>
-                <h1 class="hero-title">
-                    Domine os Investimentos e <span class="highlight">Multiplique seu Patrimônio</span> em 7 Dias
-                </h1>
-                <p class="hero-subtitle">
-                    O método definitivo de Bruno Rabelo para você sair do zero, investir com segurança e conquistar sua
-                    liberdade financeira, mesmo começando com pouco.
-                </p>
-                <a href="#oferta" class="cta-button pulse-animation" data-cursor-hover>
-                    QUERO ME TORNAR INVESTIDOR EM 7 DIAS
-                </a>
-                <div class="hero-trust">
-                    <div class="trust-item">
-                        <span class="check-icon">✓</span> Compra Segura
-                    </div>
-                    <div class="trust-item">
-                        <span class="check-icon">✓</span> Acesso Imediato
-                    </div>
-                    <div class="trust-item">
-                        <span class="check-icon">✓</span> Garantia de 7 Dias
-                    </div>
-                </div>
-            </div>
-            <div class="hero-image-wrapper reveal-right">
-                <!-- Placeholder for Bruno Rabelo Image -->
-                <div class="hero-image-placeholder">
-                    <img src="https://placehold.co/600x800/1A1A1A/FF6B35?text=Bruno+Rabelo" alt="Bruno Rabelo"
-                        class="hero-img">
-                </div>
-                <!-- Decorative Elements -->
-                <div class="diagonal-stripe"></div>
-            </div>
-        </div>
-    </header>
-
-    <!-- Credibility Bar -->
-    <section class="credibility-bar reveal-up">
-        <div class="container">
-            <div class="credibility-grid">
-                <div class="credibility-item">
-                    <img src="assets/credibility-bar.png" alt="Garantia, Certificado, Acesso Vitalício, Suporte"
-                        style="max-width: 100%; height: auto; display: block; margin: 0 auto;">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Pain & Identification Section -->
-    <section class="section pain-section">
-        <div class="container">
-            <div class="section-header text-center reveal-up">
-                <h2 class="section-title">Você sente que seu dinheiro <span class="highlight">nunca é suficiente?</span>
-                </h2>
-                <p class="section-subtitle">Se você se identifica com alguma das situações abaixo, este curso foi feito
-                    para você.</p>
-            </div>
-            <div class="pain-grid">
-                <div class="pain-card reveal-up" style="transition-delay: 0.1s;">
-                    <div class="pain-icon">✗</div>
-                    <p>Trabalha muito, ganha seu salário, mas no final do mês não sobra nada para investir.</p>
-                </div>
-                <div class="pain-card reveal-up" style="transition-delay: 0.2s;">
-                    <div class="pain-icon">✗</div>
-                    <p>Deixa seu dinheiro na Poupança vendo ele render menos que a inflação todos os anos.</p>
-                </div>
-                <div class="pain-card reveal-up" style="transition-delay: 0.3s;">
-                    <div class="pain-icon">✗</div>
-                    <p>Tem medo de investir e perder dinheiro por não saber exatamente o que está fazendo.</p>
-                </div>
-                <div class="pain-card reveal-up" style="transition-delay: 0.4s;">
-                    <div class="pain-icon">✗</div>
-                    <p>Acha que investir é apenas para quem já é rico ou é especialista em matemática.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Before vs After Section -->
-    <section class="section contrast-section">
-        <div class="container">
-            <h2 class="section-title text-center text-white reveal-up">A Diferença é <span
-                    class="highlight">Brutal</span></h2>
-            <div class="contrast-container">
-                <div class="contrast-box bad reveal-left">
-                    <h3>O Caminho Comum</h3>
-                    <ul class="contrast-list">
-                        <li><span class="icon-bad">✗</span> Dinheiro parado na conta corrente</li>
-                        <li><span class="icon-bad">✗</span> Dependência total do INSS</li>
-                        <li><span class="icon-bad">✗</span> Medo constante do futuro</li>
-                        <li><span class="icon-bad">✗</span> Trabalha pelo dinheiro a vida toda</li>
-                    </ul>
-                </div>
-                <div class="contrast-icon reveal-scale">VS</div>
-                <div class="contrast-box good reveal-right">
-                    <h3>O Caminho do Investidor</h3>
-                    <ul class="contrast-list">
-                        <li><span class="icon-good">✓</span> Dinheiro trabalhando para você 24h</li>
-                        <li><span class="icon-good">✓</span> Construção de renda passiva</li>
-                        <li><span class="icon-good">✓</span> Segurança e tranquilidade financeira</li>
-                        <li><span class="icon-good">✓</span> O dinheiro trabalha por você</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Objection Handling Section -->
-    <section class="section objection-section">
-        <div class="container">
-            <div class="objection-content reveal-up">
-                <h2 class="section-title">"Mas eu não tenho muito dinheiro..."</h2>
-                <p class="objection-text">
-                    Essa é a maior mentira que te contaram. Você não precisa ser rico para investir,
-                    <strong>você precisa investir para ficar rico.</strong>
-                </p>
-                <p class="objection-text">
-                    Com o método <em>Investidor em 1 Semana</em>, você vai aprender a começar com o que tem hoje,
-                    seja R$ 50,00 ou R$ 5.000,00. O segredo não é o quanto você tem, mas <strong>como</strong> você
-                    começa.
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <!-- What You Will Learn Section -->
-    <section class="section benefits-section">
-        <div class="container">
-            <div class="section-header text-center reveal-up">
-                <h2 class="section-title">O Que Você Vai <span class="highlight">Dominar</span></h2>
-                <p class="section-subtitle">Um método prático, direto ao ponto, sem "economês".</p>
-            </div>
-            <div class="benefits-grid">
-                <div class="benefit-card reveal-up">
-                    <div class="benefit-icon">📈</div>
-                    <h3>Renda Fixa e Tesouro</h3>
-                    <p>Aprenda a emprestar dinheiro para bancos e para o governo com segurança total.</p>
-                </div>
-                <div class="benefit-card reveal-up" style="transition-delay: 0.1s;">
-                    <div class="benefit-icon">🏢</div>
-                    <h3>Fundos Imobiliários</h3>
-                    <p>Receba aluguéis todos os meses na sua conta, isentos de Imposto de Renda.</p>
-                </div>
-                <div class="benefit-card reveal-up" style="transition-delay: 0.2s;">
-                    <div class="benefit-icon">📊</div>
-                    <h3>Ações e Dividendos</h3>
-                    <p>Torne-se sócio das maiores empresas do Brasil e lucre com o crescimento delas.</p>
-                </div>
-                <div class="benefit-card reveal-up" style="transition-delay: 0.3s;">
-                    <div class="benefit-icon">🧠</div>
-                    <h3>Mentalidade Blindada</h3>
-                    <p>Desenvolva o mindset dos grandes investidores e elimine crenças limitantes.</p>
-                </div>
-                <div class="benefit-card reveal-up" style="transition-delay: 0.4s;">
-                    <div class="benefit-icon">💼</div>
-                    <h3>Carteira Vencedora</h3>
-                    <p>Como montar um portfólio diversificado que resiste a qualquer crise.</p>
-                </div>
-                <div class="benefit-card reveal-up" style="transition-delay: 0.5s;">
-                    <div class="benefit-icon">🚀</div>
-                    <h3>Liberdade Financeira</h3>
-                    <p>O plano prático para viver de renda e nunca mais depender de patrão.</p>
-                </div>
-            </div>
-            <div class="text-center reveal-up" style="margin-top: 3rem;">
-                <a href="#oferta" class="cta-button pulse-animation">QUERO COMEÇAR AGORA</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Modules Section -->
-    <section class="section modules-section">
-        <div class="container">
-            <div class="section-header text-center reveal-up">
-                <h2 class="section-title">O Caminho Completo: <span class="highlight">Módulo a Módulo</span></h2>
-                <p class="section-subtitle">Tudo o que você precisa saber, organizado de forma lógica e progressiva.</p>
-            </div>
-            <div class="modules-grid">
-                <!-- Module 1 -->
-                <div class="module-card reveal-up">
-                    <div class="module-badge">MÓDULO 1</div>
-                    <div class="module-content">
-                        <h3>Mentalidade e Planejamento</h3>
-                        <p>Como organizar suas finanças, eliminar dívidas e preparar o terreno para investir.</p>
-                    </div>
-                </div>
-                <!-- Module 2 -->
-                <div class="module-card reveal-up" style="transition-delay: 0.1s;">
-                    <div class="module-badge">MÓDULO 2</div>
-                    <div class="module-content">
-                        <h3>Renda Fixa na Prática</h3>
-                        <p>Tesouro Direto, CDBs, LCI/LCA. Segurança e rentabilidade acima da poupança.</p>
-                    </div>
-                </div>
-                <!-- Module 3 -->
-                <div class="module-card reveal-up" style="transition-delay: 0.2s;">
-                    <div class="module-badge">MÓDULO 3</div>
-                    <div class="module-content">
-                        <h3>Fundos Imobiliários (FIIs)</h3>
-                        <p>Como viver de aluguel sem precisar comprar um imóvel físico.</p>
-                    </div>
-                </div>
-                <!-- Module 4 -->
-                <div class="module-card reveal-up" style="transition-delay: 0.3s;">
-                    <div class="module-badge">MÓDULO 4</div>
-                    <div class="module-content">
-                        <h3>Ações e Dividendos</h3>
-                        <p>Escolhendo as melhores empresas para ser sócio e ganhar parte dos lucros.</p>
-                    </div>
-                </div>
-                <!-- Module 5 -->
-                <div class="module-card reveal-up" style="transition-delay: 0.4s;">
-                    <div class="module-badge">MÓDULO 5</div>
-                    <div class="module-content">
-                        <h3>Carteira Blindada</h3>
-                        <p>Estratégias de diversificação para proteger seu patrimônio de crises.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Differentials Section -->
-    <section class="section differentials-section">
-        <div class="container">
-            <h2 class="section-title text-center reveal-up">Por que este é o <span class="highlight">Melhor Curso</span>
-                para Iniciantes?</h2>
-            <div class="differentials-table-wrapper reveal-up">
-                <table class="differentials-table">
-                    <thead>
-                        <tr>
-                            <th></th>
-                            <th class="highlight-col">Investidor em 1 Semana</th>
-                            <th>Outros Cursos</th>
-                            <th>Youtube "De Graça"</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Método Passo a Passo</td>
-                            <td class="highlight-col"><span class="check-icon">✓</span> Sim</td>
-                            <td><span class="cross-icon">✗</span> Talvez</td>
-                            <td><span class="cross-icon">✗</span> Não (Bagunçado)</td>
-                        </tr>
-                        <tr>
-                            <td>Linguagem Simples</td>
-                            <td class="highlight-col"><span class="check-icon">✓</span> Sim</td>
-                            <td><span class="cross-icon">✗</span> Não (Técnico)</td>
-                            <td><span class="cross-icon">✗</span> Varia muito</td>
-                        </tr>
-                        <tr>
-                            <td>Suporte a Dúvidas</td>
-                            <td class="highlight-col"><span class="check-icon">✓</span> Sim (Exclusivo)</td>
-                            <td><span class="cross-icon">✗</span> Demorado</td>
-                            <td><span class="cross-icon">✗</span> Inexistente</td>
-                        </tr>
-                        <tr>
-                            <td>Preço Acessível</td>
-                            <td class="highlight-col"><span class="check-icon">✓</span> Sim</td>
-                            <td><span class="cross-icon">✗</span> Não (Caro)</td>
-                            <td><span class="check-icon">✓</span> Sim</td>
-                        </tr>
-                        <tr>
-                            <td>Tempo de Resultado</td>
-                            <td class="highlight-col"><span class="check-icon">✓</span> 7 Dias</td>
-                            <td><span class="cross-icon">✗</span> Meses</td>
-                            <td><span class="cross-icon">✗</span> Indefinido</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    </section>
-
-    <!-- Testimonials Section -->
-    <section class="section testimonials-section">
-        <div class="container">
-            <div class="section-header text-center reveal-up">
-                <h2 class="section-title">O que dizem nossos <span class="highlight">Alunos</span></h2>
-                <p class="section-subtitle">Pessoas comuns que transformaram sua vida financeira.</p>
-            </div>
-            <div class="testimonials-grid">
-                <!-- Testimonial 1 -->
-                <div class="testimonial-card reveal-up">
-                    <div class="stars">★★★★★</div>
-                    <p class="testimonial-text">"Eu achava que investir era coisa de outro mundo. O Bruno explica de um
-                        jeito tão simples que na primeira semana já fiz meu primeiro investimento no Tesouro."</p>
-                    <div class="testimonial-author">
-                        <strong>Mariana Silva</strong>
-                        <span>Enfermeira, 32 anos</span>
-                    </div>
-                </div>
-                <!-- Testimonial 2 -->
-                <div class="testimonial-card reveal-up" style="transition-delay: 0.1s;">
-                    <div class="stars">★★★★★</div>
-                    <p class="testimonial-text">"O melhor investimento que fiz foi comprar esse curso. Já recuperei o
-                        valor investido só com os rendimentos dos FIIs que aprendi a escolher."</p>
-                    <div class="testimonial-author">
-                        <strong>Carlos Mendes</strong>
-                        <span>Engenheiro, 45 anos</span>
-                    </div>
-                </div>
-                <!-- Testimonial 3 -->
-                <div class="testimonial-card reveal-up" style="transition-delay: 0.2s;">
-                    <div class="stars">★★★★★</div>
-                    <p class="testimonial-text">"Didática impecável. Direto ao ponto, sem enrolação. O suporte também é
-                        excelente, tiraram todas as minhas dúvidas."</p>
-                    <div class="testimonial-author">
-                        <strong>Fernanda Costa</strong>
-                        <span>Advogada, 29 anos</span>
-                    </div>
-                </div>
-            </div>
-            <div class="text-center reveal-up" style="margin-top: 3rem;">
-                <a href="#oferta" class="cta-button">QUERO TER ESSES RESULTADOS</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Guarantee Section -->
-    <section class="section guarantee-section">
-        <div class="container">
-            <div class="guarantee-box reveal-scale">
-                <div class="guarantee-icon">🛡️</div>
-                <div class="guarantee-content">
-                    <h2 class="section-title">Risco Zero: <span class="highlight">Garantia de 7 Dias</span></h2>
-                    <p>
-                        Você entra, assiste às aulas, acessa os materiais e, se por qualquer motivo achar que não é para
-                        você,
-                        basta enviar um único e-mail e devolvemos <strong>100% do seu dinheiro</strong>. Sem perguntas,
-                        sem letras miúdas.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Price & Offer Section -->
-    <section id="oferta" class="section offer-section">
-        <div class="container">
-            <div class="offer-card reveal-up">
-                <div class="offer-header">
-                    <h3>OFERTA ESPECIAL POR TEMPO LIMITADO</h3>
-                </div>
-                <div class="offer-body">
-                    <p class="old-price">De <span>R$ 1.997,00</span> por apenas:</p>
-                    <div class="price-display">
-                        <span class="currency">12x de</span>
-                        <span class="amount">R$ 29,47</span>
-                    </div>
-                    <p class="cash-price">ou R$ 297,00 à vista</p>
-
-                    <ul class="offer-list">
-                        <li><span class="check-icon">✓</span> Curso Completo Investidor em 1 Semana</li>
-                        <li><span class="check-icon">✓</span> Bônus: Planilha de Controle Financeiro</li>
-                        <li><span class="check-icon">✓</span> Bônus: Guia de Bancos Digitais</li>
-                        <li><span class="check-icon">✓</span> Acesso Vitalício e Atualizações</li>
-                        <li><span class="check-icon">✓</span> Suporte Exclusivo com Bruno Rabelo</li>
-                        <li><span class="check-icon">✓</span> Certificado de Conclusão</li>
-                    </ul>
-
-                    <a href="#" class="cta-button pulse-animation btn-large">GARANTIR MINHA VAGA AGORA</a>
-                    <p class="secure-text">🔒 Pagamento 100% Seguro</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- FAQ Section -->
-    <section class="section faq-section">
-        <div class="container">
-            <h2 class="section-title text-center reveal-up">Perguntas <span class="highlight">Frequentes</span></h2>
-            <div class="faq-container reveal-up">
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <h3>O curso é para iniciantes?</h3>
-                        <span class="toggle-icon">+</span>
-                    </div>
-                    <div class="faq-answer">
-                        <p>Sim! O curso foi desenhado especificamente para quem está começando do zero absoluto. A
-                            linguagem é simples e direta.</p>
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <h3>Preciso de muito dinheiro para começar?</h3>
-                        <span class="toggle-icon">+</span>
-                    </div>
-                    <div class="faq-answer">
-                        <p>Não. Você aprende a investir com qualquer valor. Existem investimentos a partir de R$ 30,00
-                            no Tesouro Direto.</p>
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <h3>Por quanto tempo terei acesso?</h3>
-                        <span class="toggle-icon">+</span>
-                    </div>
-                    <div class="faq-answer">
-                        <p>O acesso é vitalício! Você pode assistir quando e quantas vezes quiser, para sempre.</p>
-                    </div>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <h3>Como funciona a garantia?</h3>
-                        <span class="toggle-icon">+</span>
-                    </div>
-                    <div class="faq-answer">
-                        <p>É simples: você tem 7 dias para testar. Se não gostar, devolvemos todo o seu dinheiro. O
-                            risco é todo nosso.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Who is this for / not for Section -->
-    <section class="section filter-section">
-        <div class="container">
-            <div class="filter-grid">
-                <div class="filter-box for-who reveal-left">
-                    <h3>Para Quem É</h3>
-                    <ul>
-                        <li><span class="check-icon">✓</span> Quer começar a investir do zero</li>
-                        <li><span class="check-icon">✓</span> Quer segurança financeira</li>
-                        <li><span class="check-icon">✓</span> Quer fazer o dinheiro render mais</li>
-                    </ul>
-                </div>
-                <div class="filter-box not-for-who reveal-right">
-                    <h3>Para Quem NÃO É</h3>
-                    <ul>
-                        <li><span class="cross-icon">✗</span> Quer fórmula mágica de enriquecimento</li>
-                        <li><span class="cross-icon">✗</span> Acha que vai ficar rico dia para noite</li>
-                        <li><span class="cross-icon">✗</span> Não está disposto a estudar</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Final CTA Section -->
-    <section class="section final-cta-section">
-        <div class="container text-center reveal-up">
-            <h2 class="section-title text-white">Sua Liberdade Financeira Começa <span class="highlight">Hoje</span>
-            </h2>
-            <p class="section-subtitle text-white" style="margin-bottom: 2rem;">Não deixe para amanhã o futuro que você
-                pode construir agora.</p>
-            <a href="#oferta" class="cta-button pulse-animation btn-large">QUERO ME TORNAR UM INVESTIDOR</a>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-logo">
-                    <h3>Bruno Rabelo</h3>
-                    <p>Investidor em 1 Semana</p>
-                </div>
-                <div class="footer-links">
-                    <a href="#">Termos de Uso</a>
-                    <a href="#">Política de Privacidade</a>
-                    <a href="#">Contato</a>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2024 Bruno Rabelo. Todos os direitos reservados.</p>
-            </div>
-        </div>
-    </footer>
+    <!-- === APP CONTAINER === -->
+    <!-- Content is injected by script.js -->
+    <div id="app"></div>
 
     <script src="script.js"></script>
 </body>
