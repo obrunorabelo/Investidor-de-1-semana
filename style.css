@@ -1,42 +1,111 @@
 /* 
-   Style.css - Custom Animations & Cursor 
-   (Layout handled by Tailwind CSS in index.html)
+   ========================================
+   INVESTIDOR EM 1 SEMANA - MOBILE-FIRST CSS
+   ========================================
+   Otimizado para responsividade perfeita
+   Base: Mobile 320px+
 */
 
-/* --- Custom Cursor --- */
-.cursor-dot,
-.cursor-outline {
-    position: fixed;
-    top: 0;
-    left: 0;
-    transform: translate(-50%, -50%);
-    border-radius: 50%;
-    z-index: 9999;
-    pointer-events: none;
+/* ========================================
+   RESET E BASE STYLES
+======================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-.cursor-dot {
-    width: 8px;
-    height: 8px;
-    background-color: #f97316;
-    /* Brand Orange */
+html {
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    scroll-behavior: smooth;
 }
 
-.cursor-outline {
-    width: 40px;
-    height: 40px;
-    border: 1px solid rgba(249, 115, 22, 0.5);
-    transition: width 0.2s, height 0.2s, background-color 0.2s;
+body {
+    overflow-x: hidden;
+    width: 100%;
+    max-width: 100vw;
+    position: relative;
 }
 
-body.hovering .cursor-outline {
-    width: 60px;
-    height: 60px;
-    background-color: rgba(249, 115, 22, 0.1);
-    border-color: #f97316;
+img,
+picture,
+video,
+canvas,
+svg {
+    display: block;
+    max-width: 100%;
+    height: auto;
 }
 
-/* --- Scroll Reveal Animations (Used by script.js) --- */
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+/* Prevent font size adjustment on iOS */
+input,
+textarea,
+select {
+    font-size: 16px !important;
+}
+
+/* ========================================
+   CUSTOM CURSOR (DESKTOP ONLY)
+======================================== */
+
+/* Hide custom cursor on mobile/tablet */
+@media (max-width: 1023px) {
+
+    .cursor-dot,
+    .cursor-outline {
+        display: none !important;
+    }
+}
+
+/* Desktop cursor styles */
+@media (min-width: 1024px) {
+
+    .cursor-dot,
+    .cursor-outline {
+        position: fixed;
+        top: 0;
+        left: 0;
+        transform: translate(-50%, -50%);
+        border-radius: 50%;
+        z-index: 9999;
+        pointer-events: none;
+    }
+
+    .cursor-dot {
+        width: 8px;
+        height: 8px;
+        background-color: #f97316;
+    }
+
+    .cursor-outline {
+        width: 40px;
+        height: 40px;
+        border: 1px solid rgba(249, 115, 22, 0.5);
+        transition: width 0.2s, height 0.2s, background-color 0.2s;
+    }
+
+    body.hovering .cursor-outline {
+        width: 60px;
+        height: 60px;
+        background-color: rgba(249, 115, 22, 0.1);
+        border-color: #f97316;
+    }
+}
+
+/* ========================================
+   SCROLL REVEAL ANIMATIONS
+======================================== */
+
 .reveal-up,
 .reveal-left,
 .reveal-right,
@@ -46,19 +115,19 @@ body.hovering .cursor-outline {
 }
 
 .reveal-up {
-    transform: translateY(50px);
+    transform: translateY(30px);
 }
 
 .reveal-left {
-    transform: translateX(-50px);
+    transform: translateX(-30px);
 }
 
 .reveal-right {
-    transform: translateX(50px);
+    transform: translateX(30px);
 }
 
 .reveal-scale {
-    transform: scale(0.8);
+    transform: scale(0.9);
 }
 
 .reveal-active {
@@ -66,19 +135,46 @@ body.hovering .cursor-outline {
     transform: translate(0) scale(1);
 }
 
-/* --- FAQ Active State (Used by script.js) --- */
+/* Reduce animation distance on mobile */
+@media (max-width: 767px) {
+    .reveal-up {
+        transform: translateY(20px);
+    }
+
+    .reveal-left,
+    .reveal-right {
+        transform: translateX(0);
+    }
+}
+
+/* ========================================
+   FAQ ACCORDION
+======================================== */
+
+.faq-item .faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease, padding-bottom 0.3s ease;
+    padding-bottom: 0;
+}
+
 .faq-item.active .faq-answer {
-    max-height: 300px;
-    /* Approximate max height */
+    max-height: 500px;
     padding-bottom: 1.5rem;
+}
+
+.faq-item .faq-question span {
+    transition: transform 0.3s ease;
 }
 
 .faq-item.active .faq-question span {
     transform: rotate(45deg);
-    transition: transform 0.3s ease;
 }
 
-/* --- Text Animate: BlurInUp --- */
+/* ========================================
+   TEXT BLUR ANIMATION
+======================================== */
+
 @keyframes blurInUp {
     0% {
         opacity: 0;
@@ -96,11 +192,384 @@ body.hovering .cursor-outline {
 .text-animate-char {
     display: inline-block;
     opacity: 0;
-    /* Start hidden */
     white-space: pre;
-    /* Preserve spaces */
 }
 
 .text-animate-active .text-animate-char {
     animation: blurInUp 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+/* ========================================
+   MOBILE-SPECIFIC UTILITIES
+======================================== */
+
+/* Touch-friendly buttons */
+@media (max-width: 767px) {
+
+    button,
+    a[class*="button"],
+    a[class*="btn"],
+    .touch-target {
+        min-height: 48px;
+        min-width: 48px;
+    }
+}
+
+/* Prevent horizontal scroll */
+.container,
+section,
+div {
+    max-width: 100%;
+}
+
+/* ========================================
+   RESPONSIVE TYPOGRAPHY
+======================================== */
+
+h1 {
+    font-size: clamp(28px, 8vw, 56px);
+    line-height: 1.2;
+}
+
+h2 {
+    font-size: clamp(24px, 7vw, 48px);
+    line-height: 1.2;
+}
+
+h3 {
+    font-size: clamp(20px, 6vw, 36px);
+    line-height: 1.3;
+}
+
+h4 {
+    font-size: clamp(18px, 5vw, 28px);
+    line-height: 1.3;
+}
+
+p,
+li {
+    font-size: clamp(14px, 4vw, 18px);
+    line-height: 1.6;
+}
+
+@media (max-width: 767px) {
+    p {
+        line-height: 1.7;
+    }
+
+    h1,
+    h2,
+    h3 {
+        word-wrap: break-word;
+        hyphens: auto;
+    }
+}
+
+/* ========================================
+   MOBILE STICKY CTA
+======================================== */
+
+@media (max-width: 767px) {
+    body {
+        padding-bottom: 80px;
+    }
+}
+
+/* ========================================
+   IMAGE OPTIMIZATION
+======================================== */
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+img[width][height] {
+    height: auto;
+}
+
+/* ========================================
+   ACCESSIBILITY
+======================================== */
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+    outline: 2px solid #f97316;
+    outline-offset: 2px;
+}
+
+/* ========================================
+   PERFORMANCE
+======================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+
+    .reveal-up,
+    .reveal-left,
+    .reveal-right,
+    .reveal-scale {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+.reveal-up,
+.reveal-left,
+.reveal-right,
+.reveal-scale,
+.cursor-outline {
+    will-change: transform, opacity;
+}
+
+/* ========================================
+   HERO SECTION - RESPONSIVA (UPDATED)
+======================================== */
+
+.hero-section {
+    background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+    padding: 60px 20px;
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px;
+    align-items: center;
+}
+
+/* Badge Superior */
+.hero-badge {
+    display: inline-block;
+    background: transparent;
+    border: 2px solid #FF6B35;
+    color: #FF6B35;
+    padding: 8px 20px;
+    border-radius: 50px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin-bottom: 24px;
+    text-transform: uppercase;
+}
+
+/* Título Principal */
+.hero-title {
+    font-size: clamp(32px, 8vw, 56px);
+    font-weight: 700;
+    line-height: 1.1;
+    color: #FFFFFF;
+    margin-bottom: 20px;
+}
+
+.hero-title .highlight {
+    color: #FF6B35;
+}
+
+/* Descrição */
+.hero-description {
+    font-size: clamp(16px, 4vw, 20px);
+    line-height: 1.6;
+    color: #B0B0B0;
+    margin-bottom: 32px;
+    max-width: 500px;
+}
+
+/* Botão CTA */
+.hero-cta {
+    background: #FF6B35;
+    color: #FFFFFF;
+    font-size: 16px;
+    font-weight: 700;
+    padding: 16px 40px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    width: 100%;
+    max-width: 400px;
+    box-shadow: 0 4px 20px rgba(255, 107, 53, 0.3);
+}
+
+.hero-cta:hover {
+    background: #ff5722;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 30px rgba(255, 107, 53, 0.5);
+}
+
+/* Social Proof */
+.hero-social-proof {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    margin-top: 32px;
+}
+
+.proof-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #B0B0B0;
+    font-size: 14px;
+}
+
+.check-icon {
+    color: #FF6B35;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+/* Imagem do Mapa */
+.hero-image {
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.hero-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 12px;
+    filter: drop-shadow(0 10px 40px rgba(0, 0, 0, 0.5));
+}
+
+/* ========================================
+   RESPONSIVIDADE
+======================================== */
+
+/* Tablet e Desktop */
+@media (min-width: 768px) {
+    .hero-section {
+        padding: 80px 40px;
+    }
+
+    .hero-container {
+        grid-template-columns: 1fr 1fr;
+        gap: 60px;
+    }
+
+    .hero-badge {
+        font-size: 13px;
+        padding: 10px 24px;
+    }
+
+    .hero-cta {
+        width: auto;
+    }
+
+    .hero-social-proof {
+        gap: 32px;
+    }
+}
+
+/* Desktop Grande */
+@media (min-width: 1024px) {
+    .hero-section {
+        padding: 100px 60px;
+    }
+
+    .hero-description {
+        font-size: 20px;
+    }
+
+    .hero-image {
+        max-width: 600px;
+    }
+}
+
+/* ========================================
+   ANIMATION UTILITIES (Glow Effects)
+======================================== */
+
+.relative {
+    position: relative;
+}
+
+.absolute {
+    position: absolute;
+}
+
+.z-10 {
+    z-index: 10;
+}
+
+.rounded-full {
+    border-radius: 9999px;
+}
+
+/* Blur utilities */
+.blur-3xl {
+    filter: blur(64px);
+}
+
+/* Opacity colors (simulating Tailwind bg-brand-orange/20) */
+.bg-brand-orange\/20 {
+    background-color: rgba(249, 115, 22, 0.2);
+}
+
+.bg-brand-orange\/30 {
+    background-color: rgba(249, 115, 22, 0.3);
+}
+
+/* Positioning */
+.-top-10 {
+    top: -2.5rem;
+}
+
+.-left-10 {
+    left: -2.5rem;
+}
+
+.-bottom-10 {
+    bottom: -2.5rem;
+}
+
+.-right-10 {
+    right: -2.5rem;
+}
+
+.w-40 {
+    width: 10rem;
+}
+
+.h-40 {
+    height: 10rem;
+}
+
+/* Pulse Animation */
+@keyframes pulse {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: .5;
+    }
+}
+
+.animate-pulse {
+    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 }

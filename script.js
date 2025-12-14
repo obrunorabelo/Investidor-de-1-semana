@@ -7,10 +7,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const DATA = {
         hero: {
-            badge: 'Curso Investidor em 1 Semana',
-            headline: 'Saia do Zero e Torne-se um <span class="text-brand-orange">Investidor Seguro</span> em Apenas 7 Dias',
-            subhead: 'O passo a passo definitivo para você parar de perder dinheiro na poupança, investir com clareza e começar a multiplicar seu patrimônio — mesmo sem saber nada sobre finanças.',
-            cta: 'Quero Começar a Investir',
+            badge: 'CURSO INVESTIDOR EM 1 SEMANA',
+            headline: 'Saia do Zero e<br>Torne-se um<br><span class="highlight" style="color: #FF6B35;">Investidor</span><br>em Apenas 7 Dias!',
+            subhead: 'O passo a passo para você sair da poupança e começar a investir na prática!',
+            cta: 'QUERO COMEÇAR A INVESTIR',
             benefits: ['Método Validado', 'Acesso Imediato', 'Garantia Total']
         },
         pain: {
@@ -43,11 +43,11 @@ document.addEventListener('DOMContentLoaded', () => {
             headline: 'O Que Você Vai <span class="text-brand-orange">Aprender</span>',
             subhead: 'Um método direto ao ponto, sem enrolação.',
             items: [
-                { img: 'assets/module-01.png', alt: 'Módulo 01: Primeiros Passos - Saindo do Zero' },
-                { img: 'assets/module-02.png', alt: 'Módulo 02: Organizando suas Finanças Pessoais' },
-                { img: 'assets/module-03.png', alt: 'Módulo 03: Segurança na Renda Fixa' },
-                { img: 'assets/module-04.png', alt: 'Módulo 04: Multiplicação com Renda Variável' },
-                { img: 'assets/module-05.png', alt: 'Módulo 05: O Plano Prático de 7 Dias' }
+                { img: 'assets/module-01.jpg', alt: 'Módulo 01: Primeiros Passos - Saindo do Zero' },
+                { img: 'assets/module-02.jpg', alt: 'Módulo 02: Organizando suas Finanças Pessoais' },
+                { img: 'assets/module-03.jpg', alt: 'Módulo 03: Segurança na Renda Fixa' },
+                { img: 'assets/module-04.jpg', alt: 'Módulo 04: Multiplicação com Renda Variável' },
+                { img: 'assets/module-05.jpg', alt: 'Módulo 05: O Plano Prático de 7 Dias' }
             ]
         },
         differentials: {
@@ -68,8 +68,8 @@ document.addEventListener('DOMContentLoaded', () => {
             headline: 'OFERTA EXCLUSIVA',
             oldPrice: 'R$ 497,00',
             installments: '12x de',
-            price: 'R$ 29,47',
-            cashPrice: 'ou R$ 297,00 à vista',
+            price: 'R$ 15,20',
+            cashPrice: 'ou R$ 147,00 à vista',
             benefits: [
                 'Curso Completo Investidor em 1 Semana',
                 'Bônus: Planilha de Controle Financeiro',
@@ -77,7 +77,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 'Acesso Vitalício e Atualizações',
                 'Suporte Exclusivo para Alunos'
             ],
-            cta: 'Garantir Minha Vaga Agora'
+            cta: 'Garantir Minha Vaga Agora',
+            checkoutUrl: 'https://payment.ticto.app/O44B8A4E7'
         },
         faq: {
             headline: 'Perguntas <span class="text-brand-orange">Frequentes</span>',
@@ -94,48 +95,46 @@ document.addEventListener('DOMContentLoaded', () => {
     // =========================================================================
 
     const HeroSection = () => `
-        <header class="relative min-h-screen flex items-center pt-20 pb-20 overflow-hidden">
-            <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-brand-orange/10 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/2 pointer-events-none"></div>
-            <div class="container mx-auto px-6 max-w-7xl relative z-10">
-                <div class="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
-                    <div class="flex-1 text-center lg:text-left reveal-left">
-                        <div class="inline-block px-4 py-2 rounded-full border border-brand-orange/30 bg-brand-orange/10 text-brand-orange text-sm font-bold tracking-widest uppercase mb-6">
-                            ${DATA.hero.badge}
-                        </div>
-                        <h1 class="font-heading text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
-                            ${DATA.hero.headline}
-                        </h1>
-                        <p class="text-lg md:text-xl text-gray-400 mb-8 font-light max-w-2xl mx-auto lg:mx-0">
-                            ${DATA.hero.subhead}
-                        </p>
-                        <div class="flex flex-col sm:flex-row items-center gap-4 justify-center lg:justify-start mb-10">
-                            <a href="#oferta" class="px-8 py-4 bg-gradient-to-r from-brand-orange to-orange-600 text-white font-bold rounded-full shadow-glow hover:shadow-glow-strong transform hover:-translate-y-1 transition-all duration-300 uppercase tracking-wide text-lg w-full sm:w-auto text-center">
-                                ${DATA.hero.cta}
-                            </a>
-                        </div>
-                        <div class="flex flex-wrap justify-center lg:justify-start gap-6 text-sm font-medium text-gray-500">
-                            ${DATA.hero.benefits.map(b => `
-                                <div class="flex items-center gap-2"><span class="text-brand-orange text-lg">✓</span> ${b}</div>
-                            `).join('')}
-                        </div>
+        <section class="hero-section">
+            <div class="hero-container">
+                <!-- Lado Esquerdo: Conteúdo -->
+                <div class="hero-content reveal-left">
+                    <div class="hero-badge">
+                        ${DATA.hero.badge}
                     </div>
-                    <div class="flex-1 relative w-full max-w-lg lg:max-w-xl reveal-right">
-                        <div class="relative z-10 rounded-2xl overflow-hidden border border-white/10 shadow-2xl">
-                            <img src="assets/hero-composite.png" alt="Bruno Rabelo" class="w-full h-auto object-cover transform hover:scale-105 transition-transform duration-700">
-                        </div>
-                        <div class="absolute -bottom-6 -right-6 w-24 h-24 bg-brand-orange/20 rounded-full blur-xl"></div>
-                        <div class="absolute -top-6 -left-6 w-32 h-32 bg-brand-orange/10 rounded-full blur-xl"></div>
+                    
+                    <h1 class="hero-title">
+                        ${DATA.hero.headline}
+                    </h1>
+                    
+                    <p class="hero-description">
+                        ${DATA.hero.subhead}
+                    </p>
+                    
+                    <a href="#oferta" class="hero-cta inline-block text-center no-underline">
+                        ${DATA.hero.cta}
+                    </a>
+                    
+                    <div class="hero-social-proof">
+                        ${DATA.hero.benefits.map(b => `
+                            <div class="proof-item">
+                                <span class="check-icon">✓</span>
+                                <span>${b}</span>
+                            </div>
+                        `).join('')}
                     </div>
                 </div>
-                <!-- Credibility Bar -->
-                <div class="mt-20 grid grid-cols-2 md:grid-cols-4 gap-6 border-t border-white/10 pt-10 reveal-up">
-                    <div class="flex flex-col items-center text-center gap-2"><span class="text-3xl">🛡️</span><span class="font-semibold text-white">Segurança Total</span></div>
-                    <div class="flex flex-col items-center text-center gap-2"><span class="text-3xl">🎓</span><span class="font-semibold text-white">Certificado Oficial</span></div>
-                    <div class="flex flex-col items-center text-center gap-2"><span class="text-3xl">♾️</span><span class="font-semibold text-white">Acesso Vitalício</span></div>
-                    <div class="flex flex-col items-center text-center gap-2"><span class="text-3xl">💬</span><span class="font-semibold text-white">Suporte Próximo</span></div>
+                
+                <!-- Lado Direito: Nova Imagem do Mapa com Efeitos -->
+                <div class="hero-image reveal-right relative">
+                    <!-- Glow Effects (Restored) -->
+                    <div class="absolute -top-10 -left-10 w-40 h-40 bg-brand-orange/20 rounded-full blur-3xl animate-pulse"></div>
+                    <div class="absolute -bottom-10 -right-10 w-40 h-40 bg-brand-orange/30 rounded-full blur-3xl animate-pulse" style="animation-delay: 1s;"></div>
+                    
+                    <img src="assets/hero-roadmap.png" alt="Mapa do Investidor - Do Zero ao Primeiro Investimento em 7 Dias" class="relative z-10 transform hover:scale-105 transition-transform duration-700">
                 </div>
             </div>
-        </header>
+        </section>
     `;
 
     const PainSection = () => `
@@ -263,7 +262,7 @@ document.addEventListener('DOMContentLoaded', () => {
                                     <li class="flex items-start gap-3"><span class="text-brand-orange font-bold mt-1">✓</span> ${b}</li>
                                 `).join('')}
                             </ul>
-                            <a href="#" class="block w-full py-4 bg-brand-orange text-white font-bold rounded-full shadow-lg hover:bg-orange-600 transition-colors uppercase tracking-wide text-lg mb-4 shadow-glow">${DATA.offer.cta}</a>
+                            <a href="${DATA.offer.checkoutUrl}" target="_blank" rel="noopener noreferrer" class="block w-full py-4 bg-brand-orange text-white font-bold rounded-full shadow-lg hover:bg-orange-600 transition-colors uppercase tracking-wide text-lg mb-4 shadow-glow">${DATA.offer.cta}</a>
                             <p class="text-gray-500 text-sm flex items-center justify-center gap-2">🔒 Pagamento 100% Seguro</p>
                         </div>
                     </div>
