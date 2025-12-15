@@ -11,14 +11,19 @@ document.addEventListener('DOMContentLoaded', () => {
             headline: 'Saia do Zero e<br>Torne-se um<br><span class="highlight" style="color: #FF6B35;">Investidor</span><br>em Apenas 7 Dias!',
             subhead: 'O passo a passo para você sair da poupança e começar a investir na prática!',
             cta: 'QUERO COMEÇAR A INVESTIR',
-            benefits: ['Método Validado', 'Acesso Imediato', 'Garantia Total']
+            benefits: ['Método Validado', 'Acesso Imediato', 'Garantia Total'],
+            footerBenefits: [
+                { text: 'Acesso por 12 meses', icon: 'infinity' },
+                { text: 'Certificado Digital', icon: 'certificate' },
+                { text: 'Equipe de Suporte', icon: 'chat' }
+            ]
         },
         pain: {
             headline: 'Cansado de ver seu dinheiro <span class="text-brand-orange">perder valor?</span>',
-            subhead: 'Se você se identifica com alguma dessas situações, você está no lugar certo para mudar essa realidade.',
+            subhead: 'Se você se identifica com alguma dessas situações, você está no lugar certo para mudar isso!',
             cards: [
                 'Trabalha o mês inteiro, paga as contas e sente que não sobra nada para o futuro.',
-                'Deixa o dinheiro "mofando" na Poupança porque tem medo de arriscar em outros lugares.',
+                'Deixa o dinheiro parado na poupança, simplesmente por não conhecer outras possibilidades.',
                 'Acha o mercado financeiro complicado demais e cheio de termos que você não entende.',
                 'Sabe que precisa investir, mas fica paralisado sem saber qual o primeiro passo dar.'
             ]
@@ -115,14 +120,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         ${DATA.hero.cta}
                     </a>
                     
-                    <div class="hero-social-proof">
-                        ${DATA.hero.benefits.map(b => `
-                            <div class="proof-item">
-                                <span class="check-icon">✓</span>
-                                <span>${b}</span>
-                            </div>
-                        `).join('')}
-                    </div>
+
                 </div>
                 
                 <!-- Lado Direito: Nova Imagem do Mapa com Efeitos -->
@@ -132,6 +130,23 @@ document.addEventListener('DOMContentLoaded', () => {
                     <div class="absolute -bottom-10 -right-10 w-40 h-40 bg-brand-orange/30 rounded-full blur-3xl animate-pulse" style="animation-delay: 1s;"></div>
                     
                     <img src="assets/hero-roadmap.png" alt="Mapa do Investidor - Do Zero ao Primeiro Investimento em 7 Dias" class="relative z-10 transform hover:scale-105 transition-transform duration-700">
+                </div>
+            </div>
+
+            <!-- New Footer Benefits Bar -->
+            <!-- New Footer Benefits Bar -->
+            <div class="container mx-auto px-6 max-w-7xl mt-16 border-t border-white/10 pt-10">
+                <div class="flex flex-row justify-between items-start gap-2 md:grid md:grid-cols-3 md:gap-8 text-center reveal-up">
+                    ${DATA.hero.footerBenefits.map(item => `
+                        <div class="flex flex-col items-center gap-2 group w-1/3 md:w-full">
+                            <div class="w-10 h-10 md:w-12 md:h-12 flex items-center justify-center bg-white/5 rounded-full border border-white/10 group-hover:border-brand-orange/50 group-hover:bg-brand-orange/10 transition-all duration-300">
+                                ${item.icon === 'infinity' ? '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-gray-400 group-hover:text-brand-orange transition-colors md:w-6 md:h-6"><path d="M12 12c-2-2.67-4-4-6-4a4 4 0 1 0 0 8c2 0 4-1.33 6-4Zm0 0c2 2.67 4 4 6 4a4 4 0 1 0 0-8c-2 0-4 1.33-6 4Z"/></svg>' : ''}
+                                ${item.icon === 'certificate' ? '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-gray-400 group-hover:text-brand-orange transition-colors md:w-6 md:h-6"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>' : ''}
+                                ${item.icon === 'chat' ? '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-gray-400 group-hover:text-brand-orange transition-colors md:w-6 md:h-6"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>' : ''}
+                            </div>
+                            <span class="text-gray-300 font-medium group-hover:text-white transition-colors text-xs md:text-base leading-tight">${item.text}</span>
+                        </div>
+                    `).join('')}
                 </div>
             </div>
         </section>

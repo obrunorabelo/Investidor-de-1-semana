@@ -7,8 +7,8 @@
 */
 
 /* ========================================
-   RESET E BASE STYLES
-======================================== */
+   1. RESET E BASE STYLES
+   ======================================== */
 
 * {
     margin: 0;
@@ -18,9 +18,8 @@
 
 html {
     font-size: 16px;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
     scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
 }
 
 body {
@@ -28,6 +27,9 @@ body {
     width: 100%;
     max-width: 100vw;
     position: relative;
+    background-color: #0a0a0a;
+    color: #e5e5e5;
+    font-family: 'Inter', sans-serif;
 }
 
 img,
@@ -45,40 +47,217 @@ button,
 textarea,
 select {
     font: inherit;
-}
-
-/* Prevent font size adjustment on iOS */
-input,
-textarea,
-select {
-    font-size: 16px !important;
+    font-size: 16px;
+    /* Evita zoom no iOS */
 }
 
 /* ========================================
-   CUSTOM CURSOR (DESKTOP ONLY)
-======================================== */
+   2. TIPOGRAFIA RESPONSIVA
+   ======================================== */
 
-/* Hide custom cursor on mobile/tablet */
-@media (max-width: 1023px) {
+h1,
+.hero-title {
+    font-family: 'Poppins', sans-serif;
+    font-size: clamp(28px, 9vw, 56px);
+    line-height: 1.1;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+}
 
-    .cursor-dot,
-    .cursor-outline {
-        display: none !important;
+h2 {
+    font-family: 'Poppins', sans-serif;
+    font-size: clamp(24px, 7vw, 40px);
+    line-height: 1.2;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+h3 {
+    font-family: 'Poppins', sans-serif;
+    font-size: clamp(20px, 5vw, 32px);
+    line-height: 1.3;
+    font-weight: 600;
+}
+
+p,
+li {
+    font-size: clamp(14px, 4vw, 18px);
+    line-height: 1.6;
+    color: #b0b0b0;
+    margin-bottom: 1rem;
+}
+
+/* ========================================
+   3. LAYOUT & GRID SYSTEM
+   ======================================== */
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.section {
+    padding: 40px 20px;
+}
+
+/* Grid Padrão: 1 coluna Mobile */
+.grid-system {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
+}
+
+/* ========================================
+   4. COMPONENTES
+   ======================================== */
+
+/* Botões Touch-Friendly */
+.btn-primary,
+.hero-cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    /* Mobile Full Width */
+    min-height: 48px;
+    /* Touch Target Mínimo */
+    padding: 14px 28px;
+    background-color: #f97316;
+    color: white;
+    font-weight: 700;
+    text-transform: uppercase;
+    border-radius: 8px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+    border: none;
+    font-size: 16px;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 15px rgba(249, 115, 22, 0.3);
+}
+
+.btn-primary:active,
+.hero-cta:active {
+    transform: scale(0.98);
+}
+
+/* Badge */
+.hero-badge {
+    display: inline-block;
+    padding: 6px 16px;
+    border: 1px solid #f97316;
+    color: #f97316;
+    border-radius: 50px;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+    letter-spacing: 1px;
+}
+
+/* ========================================
+   5. HERO SECTION
+   ======================================== */
+
+.hero-section {
+    background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+    min-height: 100vh;
+    /* Ocupa tela toda */
+    padding: 80px 20px 40px;
+    /* Mais padding top para navbar/header */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-container {
+    width: 100%;
+    max-width: 1200px;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px;
+    align-items: center;
+}
+
+.hero-content {
+    text-align: center;
+    /* Centralizado no mobile */
+}
+
+/* Highlight Text */
+.highlight {
+    color: #f97316;
+}
+
+/* ========================================
+   6. TABLET BREAKPOINT (768px+)
+   ======================================== */
+
+@media (min-width: 768px) {
+    .container {
+        padding: 0 40px;
+    }
+
+    .section {
+        padding: 60px 40px;
+    }
+
+    .grid-system {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+    }
+
+    /* Botões tamanho auto */
+    .btn-primary,
+    .hero-cta {
+        width: auto;
+        min-width: 240px;
+    }
+
+    /* Hero Layout */
+    .hero-container {
+        grid-template-columns: 1.2fr 1fr;
+        /* Texto maior que imagem */
+        text-align: left;
+    }
+
+    .hero-content {
+        text-align: left;
     }
 }
 
-/* Desktop cursor styles */
-@media (min-width: 1024px) {
+/* ========================================
+   7. DESKTOP BREAKPOINT (1024px+)
+   ======================================== */
 
+@media (min-width: 1024px) {
+    .container {
+        padding: 0 60px;
+    }
+
+    .section {
+        padding: 80px 60px;
+    }
+
+    .grid-system {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 40px;
+    }
+
+    /* Cursor Customizado apenas Desktop */
     .cursor-dot,
     .cursor-outline {
+        display: block;
         position: fixed;
-        top: 0;
-        left: 0;
-        transform: translate(-50%, -50%);
-        border-radius: 50%;
-        z-index: 9999;
         pointer-events: none;
+        z-index: 9999;
+        border-radius: 50%;
+        transform: translate(-50%, -50%);
     }
 
     .cursor-dot {
@@ -103,405 +282,114 @@ select {
 }
 
 /* ========================================
-   SCROLL REVEAL ANIMATIONS
-======================================== */
+   8. UTILITÁRIOS E ANIMAÇÕES
+   ======================================== */
 
-.reveal-up,
-.reveal-left,
-.reveal-right,
-.reveal-scale {
-    opacity: 0;
-    transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
-}
-
+/* Animações de Scroll */
 .reveal-up {
     transform: translateY(30px);
+    opacity: 0;
+    transition: 0.8s ease;
 }
 
 .reveal-left {
     transform: translateX(-30px);
+    opacity: 0;
+    transition: 0.8s ease;
 }
 
 .reveal-right {
     transform: translateX(30px);
+    opacity: 0;
+    transition: 0.8s ease;
 }
 
 .reveal-scale {
     transform: scale(0.9);
+    opacity: 0;
+    transition: 0.8s ease;
 }
 
 .reveal-active {
+    transform: translate(0);
     opacity: 1;
-    transform: translate(0) scale(1);
 }
 
-/* Reduce animation distance on mobile */
-@media (max-width: 767px) {
-    .reveal-up {
-        transform: translateY(20px);
-    }
+@media (prefers-reduced-motion: reduce) {
 
+    .reveal-up,
     .reveal-left,
-    .reveal-right {
-        transform: translateX(0);
+    .reveal-right,
+    .reveal-scale {
+        transform: none;
+        opacity: 1;
+        transition: none;
     }
 }
 
-/* ========================================
-   FAQ ACCORDION
-======================================== */
+/* Glow Effects */
+.blur-3xl {
+    filter: blur(64px);
+}
 
-.faq-item .faq-answer {
+.animate-pulse {
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.5;
+    }
+}
+
+/* FAQ Styles */
+.faq-item {
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    background: #1a1a1a;
+    width: 100%;
+}
+
+.faq-answer {
     max-height: 0;
     overflow: hidden;
-    transition: max-height 0.3s ease, padding-bottom 0.3s ease;
-    padding-bottom: 0;
+    transition: max-height 0.3s ease;
 }
 
 .faq-item.active .faq-answer {
     max-height: 500px;
-    padding-bottom: 1.5rem;
+    padding-bottom: 24px;
 }
 
-.faq-item .faq-question span {
-    transition: transform 0.3s ease;
-}
-
-.faq-item.active .faq-question span {
-    transform: rotate(45deg);
-}
-
-/* ========================================
-   TEXT BLUR ANIMATION
-======================================== */
-
-@keyframes blurInUp {
-    0% {
-        opacity: 0;
-        filter: blur(10px);
-        transform: translateY(20px);
-    }
-
-    100% {
-        opacity: 1;
-        filter: blur(0);
-        transform: translateY(0);
-    }
-}
-
-.text-animate-char {
-    display: inline-block;
-    opacity: 0;
-    white-space: pre;
-}
-
-.text-animate-active .text-animate-char {
-    animation: blurInUp 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
-}
-
-/* ========================================
-   MOBILE-SPECIFIC UTILITIES
-======================================== */
-
-/* Touch-friendly buttons */
-@media (max-width: 767px) {
-
-    button,
-    a[class*="button"],
-    a[class*="btn"],
-    .touch-target {
-        min-height: 48px;
-        min-width: 48px;
-    }
-}
-
-/* Prevent horizontal scroll */
-.container,
-section,
-div {
-    max-width: 100%;
-}
-
-/* ========================================
-   RESPONSIVE TYPOGRAPHY
-======================================== */
-
-h1 {
-    font-size: clamp(28px, 8vw, 56px);
-    line-height: 1.2;
-}
-
-h2 {
-    font-size: clamp(24px, 7vw, 48px);
-    line-height: 1.2;
-}
-
-h3 {
-    font-size: clamp(20px, 6vw, 36px);
-    line-height: 1.3;
-}
-
-h4 {
-    font-size: clamp(18px, 5vw, 28px);
-    line-height: 1.3;
-}
-
-p,
-li {
-    font-size: clamp(14px, 4vw, 18px);
-    line-height: 1.6;
-}
-
-@media (max-width: 767px) {
-    p {
-        line-height: 1.7;
-    }
-
-    h1,
-    h2,
-    h3 {
-        word-wrap: break-word;
-        hyphens: auto;
-    }
-}
-
-/* ========================================
-   MOBILE STICKY CTA
-======================================== */
-
+/* Mobile Sticky CTA Prevention */
 @media (max-width: 767px) {
     body {
         padding-bottom: 80px;
     }
 }
 
-/* ========================================
-   IMAGE OPTIMIZATION
-======================================== */
-
-img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-}
-
-img[width][height] {
-    height: auto;
-}
-
-/* ========================================
-   ACCESSIBILITY
-======================================== */
-
-a:focus-visible,
-button:focus-visible,
-input:focus-visible,
-textarea:focus-visible {
-    outline: 2px solid #f97316;
-    outline-offset: 2px;
-}
-
-/* ========================================
-   PERFORMANCE
-======================================== */
-
-@media (prefers-reduced-motion: reduce) {
-
-    *,
-    *::before,
-    *::after {
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0.01ms !important;
-        scroll-behavior: auto !important;
-    }
-
-    .reveal-up,
-    .reveal-left,
-    .reveal-right,
-    .reveal-scale {
-        opacity: 1;
-        transform: none;
-    }
-}
-
-.reveal-up,
-.reveal-left,
-.reveal-right,
-.reveal-scale,
-.cursor-outline {
-    will-change: transform, opacity;
-}
-
-/* ========================================
-   HERO SECTION - RESPONSIVA (UPDATED)
-======================================== */
-
-.hero-section {
-    background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
-    padding: 60px 20px;
-    min-height: 90vh;
-    display: flex;
-    align-items: center;
-    position: relative;
-    overflow: hidden;
-}
-
-.hero-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 40px;
-    align-items: center;
-}
-
-/* Badge Superior */
-.hero-badge {
-    display: inline-block;
-    background: transparent;
-    border: 2px solid #FF6B35;
-    color: #FF6B35;
-    padding: 8px 20px;
-    border-radius: 50px;
-    font-size: 12px;
-    font-weight: 600;
-    letter-spacing: 1px;
-    margin-bottom: 24px;
-    text-transform: uppercase;
-}
-
-/* Título Principal */
-.hero-title {
-    font-size: clamp(32px, 8vw, 56px);
-    font-weight: 700;
-    line-height: 1.1;
-    color: #FFFFFF;
-    margin-bottom: 20px;
-}
-
-.hero-title .highlight {
-    color: #FF6B35;
-}
-
-/* Descrição */
-.hero-description {
-    font-size: clamp(16px, 4vw, 20px);
-    line-height: 1.6;
-    color: #B0B0B0;
-    margin-bottom: 32px;
-    max-width: 500px;
-}
-
-/* Botão CTA */
-.hero-cta {
-    background: #FF6B35;
-    color: #FFFFFF;
-    font-size: 16px;
-    font-weight: 700;
-    padding: 16px 40px;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    width: 100%;
-    max-width: 400px;
-    box-shadow: 0 4px 20px rgba(255, 107, 53, 0.3);
-}
-
-.hero-cta:hover {
-    background: #ff5722;
-    transform: translateY(-2px);
-    box-shadow: 0 6px 30px rgba(255, 107, 53, 0.5);
-}
-
-/* Social Proof */
+/* Ajustes Específicos para Elementos Existentes */
 .hero-social-proof {
     display: flex;
     flex-wrap: wrap;
-    gap: 24px;
-    margin-top: 32px;
+    gap: 16px;
+    justify-content: center;
+    /* Mobile Center */
 }
 
-.proof-item {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    color: #B0B0B0;
-    font-size: 14px;
-}
-
-.check-icon {
-    color: #FF6B35;
-    font-weight: bold;
-    font-size: 16px;
-}
-
-/* Imagem do Mapa */
-.hero-image {
-    width: 100%;
-    max-width: 500px;
-    margin: 0 auto;
-}
-
-.hero-image img {
-    width: 100%;
-    height: auto;
-    display: block;
-    border-radius: 12px;
-    filter: drop-shadow(0 10px 40px rgba(0, 0, 0, 0.5));
-}
-
-/* ========================================
-   RESPONSIVIDADE
-======================================== */
-
-/* Tablet e Desktop */
 @media (min-width: 768px) {
-    .hero-section {
-        padding: 80px 40px;
-    }
-
-    .hero-container {
-        grid-template-columns: 1fr 1fr;
-        gap: 60px;
-    }
-
-    .hero-badge {
-        font-size: 13px;
-        padding: 10px 24px;
-    }
-
-    .hero-cta {
-        width: auto;
-    }
-
     .hero-social-proof {
-        gap: 32px;
+        justify-content: flex-start;
     }
 }
 
-/* Desktop Grande */
-@media (min-width: 1024px) {
-    .hero-section {
-        padding: 100px 60px;
-    }
-
-    .hero-description {
-        font-size: 20px;
-    }
-
-    .hero-image {
-        max-width: 600px;
-    }
-}
-
-/* ========================================
-   ANIMATION UTILITIES (Glow Effects)
-======================================== */
-
+/* Classes utilitárias necessárias para animações */
 .relative {
     position: relative;
 }
@@ -518,12 +406,6 @@ textarea:focus-visible {
     border-radius: 9999px;
 }
 
-/* Blur utilities */
-.blur-3xl {
-    filter: blur(64px);
-}
-
-/* Opacity colors (simulating Tailwind bg-brand-orange/20) */
 .bg-brand-orange\/20 {
     background-color: rgba(249, 115, 22, 0.2);
 }
@@ -532,7 +414,6 @@ textarea:focus-visible {
     background-color: rgba(249, 115, 22, 0.3);
 }
 
-/* Positioning */
 .-top-10 {
     top: -2.5rem;
 }
@@ -555,21 +436,4 @@ textarea:focus-visible {
 
 .h-40 {
     height: 10rem;
-}
-
-/* Pulse Animation */
-@keyframes pulse {
-
-    0%,
-    100% {
-        opacity: 1;
-    }
-
-    50% {
-        opacity: .5;
-    }
-}
-
-.animate-pulse {
-    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 }
