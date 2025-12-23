@@ -129,7 +129,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     <div class="absolute -top-10 -left-10 w-40 h-40 bg-brand-orange/20 rounded-full blur-3xl animate-pulse"></div>
                     <div class="absolute -bottom-10 -right-10 w-40 h-40 bg-brand-orange/30 rounded-full blur-3xl animate-pulse" style="animation-delay: 1s;"></div>
                     
-                    <img src="assets/hero-roadmap.png" alt="Mapa do Investidor - Do Zero ao Primeiro Investimento em 7 Dias" class="relative z-10 transform hover:scale-105 transition-transform duration-700">
+                    <img src="assets/hero-roadmap.png" alt="Mapa do Investidor - Do Zero ao Primeiro Investimento em 7 Dias" class="relative z-10 w-full max-w-[450px] aspect-[9/16] object-cover mx-auto transform hover:scale-105 transition-transform duration-700 rounded-[2.5rem]" style="max-height: 85vh;">
                 </div>
             </div>
 
@@ -220,9 +220,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 </div>
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
                     ${DATA.modules.items.map((m, i) => `
-                        <div class="relative group rounded-2xl overflow-hidden shadow-lg hover:shadow-glow transition-all duration-500 reveal-up" style="transition-delay: ${i * 100}ms">
-                            <div class="aspect-[9/16] w-full h-full overflow-hidden rounded-2xl border border-white/5 group-hover:border-brand-orange transition-colors duration-300">
-                                <img src="${m.img}" alt="${m.alt}" class="object-cover w-full h-full transform group-hover:scale-110 transition-transform duration-700">
+                        <div class="relative group rounded-3xl overflow-hidden shadow-lg hover:shadow-glow transition-all duration-500 reveal-up" style="transition-delay: ${i * 100}ms">
+                            <div class="w-full h-auto overflow-hidden rounded-3xl border border-white/5 group-hover:border-brand-orange transition-colors duration-300">
+                                <img src="${m.img}" alt="${m.alt}" class="w-full h-auto object-cover transform group-hover:scale-110 transition-transform duration-700">
                             </div>
                         </div>
                     `).join('')}
