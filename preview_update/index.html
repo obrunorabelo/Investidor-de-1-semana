@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Investidor em 1 Semana - Bruno Rabelo</title>
+    <meta name="description"
+        content="Domine o mercado financeiro e comece a investir com segurança em apenas 1 semana com Bruno Rabelo.">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            black: '#0a0a0a',
+                            dark: '#111111',
+                            gray: '#1a1a1a',
+                            orange: '#f97316', // Orange-500
+                            orangeHover: '#ea580c', // Orange-600
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Poppins', 'sans-serif'],
+                    },
+                    boxShadow: {
+                        'glow': '0 0 20px rgba(249, 115, 22, 0.3)',
+                        'glow-strong': '0 0 40px rgba(249, 115, 22, 0.5)',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Custom Styles (Animations & Cursor) -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body
+    class="bg-brand-black text-gray-300 font-sans antialiased overflow-x-hidden selection:bg-brand-orange selection:text-white">
+
+    <!-- Custom Cursor Elements -->
+    <div class="cursor-dot" data-cursor-dot></div>
+    <div class="cursor-outline" data-cursor-outline></div>
+
+    <!-- Sticky CTA Mobile -->
+    <div
+        class="fixed bottom-0 left-0 w-full bg-brand-black/90 backdrop-blur-md p-4 z-50 md:hidden border-t border-white/10">
+        <a href="#oferta"
+            class="block w-full bg-brand-orange text-white font-bold text-center py-3 rounded-full uppercase tracking-wider shadow-lg">
+            Quero Minha Vaga
+        </a>
+    </div>
+
+    <!-- === APP CONTAINER === -->
+    <!-- Content is injected by script.js -->
+    <div id="app"></div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
