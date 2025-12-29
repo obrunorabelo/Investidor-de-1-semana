@@ -58,8 +58,8 @@ select {
 h1,
 .hero-title {
     font-family: 'Poppins', sans-serif;
-    font-size: clamp(28px, 9vw, 56px);
-    line-height: 1.1;
+    font-size: clamp(32px, 10vw, 64px);
+    line-height: 1.25;
     font-weight: 700;
     margin-bottom: 1.5rem;
 }
@@ -123,19 +123,21 @@ li {
     /* Mobile Full Width */
     min-height: 48px;
     /* Touch Target Mínimo */
-    padding: 14px 28px;
-    background-color: #f97316;
+    padding: 25px 50px;
+    font-size: 18px;
+    background-color: #f27317;
     color: white;
-    font-weight: 700;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 800;
     text-transform: uppercase;
-    border-radius: 8px;
+    border-radius: 50px;
     text-decoration: none;
     cursor: pointer;
     transition: transform 0.2s, box-shadow 0.2s;
     border: none;
     font-size: 16px;
     letter-spacing: 0.5px;
-    box-shadow: 0 4px 15px rgba(249, 115, 22, 0.3);
+    box-shadow: 0 4px 15px rgba(242, 115, 23, 0.3);
 }
 
 .btn-primary:active,
@@ -147,14 +149,21 @@ li {
 .hero-badge {
     display: inline-block;
     padding: 6px 16px;
-    border: 1px solid #f97316;
-    color: #f97316;
+    border: 1px solid #f27317;
+    color: #f27317;
     border-radius: 50px;
     font-size: 12px;
     font-weight: 600;
     text-transform: uppercase;
     margin-bottom: 1.5rem;
     letter-spacing: 1px;
+}
+
+.hero-description {
+    margin-top: 1.5rem;
+    margin-bottom: 2.5rem;
+    font-size: 1.125rem;
+    /* 18px */
 }
 
 /* ========================================
@@ -191,7 +200,7 @@ li {
 
 /* Highlight Text */
 .highlight {
-    color: #f97316;
+    color: #f27317;
 }
 
 /* ========================================
@@ -263,21 +272,21 @@ li {
     .cursor-dot {
         width: 8px;
         height: 8px;
-        background-color: #f97316;
+        background-color: #f27317;
     }
 
     .cursor-outline {
         width: 40px;
         height: 40px;
-        border: 1px solid rgba(249, 115, 22, 0.5);
+        border: 1px solid rgba(242, 115, 23, 0.5);
         transition: width 0.2s, height 0.2s, background-color 0.2s;
     }
 
     body.hovering .cursor-outline {
         width: 60px;
         height: 60px;
-        background-color: rgba(249, 115, 22, 0.1);
-        border-color: #f97316;
+        background-color: rgba(242, 115, 23, 0.1);
+        border-color: #f27317;
     }
 }
 
@@ -407,11 +416,11 @@ li {
 }
 
 .bg-brand-orange\/20 {
-    background-color: rgba(249, 115, 22, 0.2);
+    background-color: rgba(242, 115, 23, 0.2);
 }
 
 .bg-brand-orange\/30 {
-    background-color: rgba(249, 115, 22, 0.3);
+    background-color: rgba(242, 115, 23, 0.3);
 }
 
 .-top-10 {

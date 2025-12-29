@@ -8,8 +8,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const DATA = {
         hero: {
             badge: 'CURSO INVESTIDOR EM 1 SEMANA',
-            headline: 'Saia do Zero e<br>Torne-se um<br><span class="highlight" style="color: #FF6B35;">Investidor</span><br>em Apenas 7 Dias!',
-            subhead: 'O passo a passo para você sair da poupança e começar a investir na prática!',
+            headline: 'Passo a passo para começar a<br><span class="highlight" style="color: #f27317;">investir em apenas 1 semana!</span>',
+            subhead: '',
             cta: 'QUERO COMEÇAR A INVESTIR',
             benefits: ['Método Validado', 'Acesso Imediato', 'Garantia Total'],
             footerBenefits: [
@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
             },
             goodSide: {
                 title: 'O Caminho do Investidor',
-                items: ['Dinheiro rendendo 24h/dia', 'Construção de Renda Passiva', 'Tranquilidade e Segurança', 'O dinheiro trabalha para você']
+                items: ['Dinheiro 24h/dia', 'Construção de Renda Passiva', 'Tranquilidade e Segurança', 'O dinheiro trabalha para você']
             }
         },
         objection: {
@@ -101,7 +101,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const HeroSection = () => `
         <section class="hero-section">
-            <div class="hero-container">
+            <!-- Ambient Background Glow -->
+            <div class="absolute top-[-20%] left-[-10%] w-[600px] h-[600px] bg-brand-orange/10 rounded-full blur-[120px] pointer-events-none animate-pulse" style="animation-duration: 4s;"></div>
+            <div class="absolute bottom-[-10%] right-[-5%] w-[500px] h-[500px] bg-brand-orange/5 rounded-full blur-[100px] pointer-events-none"></div>
+
+            <div class="hero-container relative z-10">
                 <!-- Lado Esquerdo: Conteúdo -->
                 <div class="hero-content reveal-left">
                     <div class="hero-badge">
@@ -112,9 +116,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         ${DATA.hero.headline}
                     </h1>
                     
-                    <p class="hero-description">
-                        ${DATA.hero.subhead}
-                    </p>
+
                     
                     <a href="#oferta" class="hero-cta inline-block text-center no-underline">
                         ${DATA.hero.cta}
@@ -129,7 +131,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     <div class="absolute -top-10 -left-10 w-40 h-40 bg-brand-orange/20 rounded-full blur-3xl animate-pulse"></div>
                     <div class="absolute -bottom-10 -right-10 w-40 h-40 bg-brand-orange/30 rounded-full blur-3xl animate-pulse" style="animation-delay: 1s;"></div>
                     
-                    <img src="assets/hero-roadmap.png" alt="Mapa do Investidor - Do Zero ao Primeiro Investimento em 7 Dias" class="relative z-10 w-full max-w-[450px] aspect-[9/16] object-cover mx-auto transform hover:scale-105 transition-transform duration-700 rounded-[2.5rem]" style="max-height: 85vh;">
+                    <img src="assets/hero-roadmap.jpg" alt="Mapa do Investidor - Do Zero ao Primeiro Investimento em 7 Dias" class="relative z-10 w-full max-w-[450px] aspect-[9/16] object-cover mx-auto transform hover:scale-105 transition-transform duration-700 rounded-[2.5rem]" style="max-height: 85vh;">
                 </div>
             </div>
 
@@ -213,7 +215,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const ModulesSection = () => `
         <section class="py-24 bg-brand-dark">
-            <div class="container mx-auto px-6 max-w-7xl">
+            <div class="container mx-auto px-6 max-w-[1800px]">
                 <div class="text-center mb-16 reveal-up">
                     <h2 class="font-heading text-3xl md:text-4xl font-bold text-white mb-4">${DATA.modules.headline}</h2>
                     <p class="text-gray-400">${DATA.modules.subhead}</p>
