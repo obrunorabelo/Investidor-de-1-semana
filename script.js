@@ -19,8 +19,8 @@ document.addEventListener('DOMContentLoaded', () => {
             ]
         },
         pain: {
-            headline: 'Cansado de ver seu dinheiro <span class="text-brand-orange">perder valor?</span>',
-            subhead: 'Se você se identifica com alguma dessas situações, você está no lugar certo para mudar isso!',
+            headline: 'Se você se identifica com alguma dessas situações, você está no <span class="text-brand-orange">lugar certo</span> para <span class="text-brand-orange">mudar isso!</span>',
+            subhead: 'Cansado de ver seu dinheiro <span class="text-brand-orange">perder valor?</span>',
             cards: [
                 'Trabalha o mês inteiro, paga as contas e sente que não sobra nada para o futuro.',
                 'Deixa o dinheiro parado na poupança, simplesmente por não conhecer outras possibilidades.',
@@ -32,12 +32,27 @@ document.addEventListener('DOMContentLoaded', () => {
             headline: 'A Diferença é <span class="text-brand-orange">Brutal</span>',
             badSide: {
                 title: 'O Caminho Comum',
-                items: ['Dinheiro parado perdendo valor', 'Dependência total do INSS', 'Insegurança sobre o futuro', 'Você trabalha pelo dinheiro']
+                items: ['Dinheiro parado perdendo valor', 'Dependência total do INSS', 'Insegurança sobre o futuro', 'Vida financeira desorganizada']
             },
             goodSide: {
                 title: 'O Caminho do Investidor',
-                items: ['Dinheiro 24h/dia', 'Construção de Renda Passiva', 'Tranquilidade e Segurança', 'O dinheiro trabalha para você']
+                items: ['Dinheiro Aplicado', 'Seu plano para aposentadoria', 'Tranquilidade e paz', 'Seu dinheiro organizado e investido']
             }
+        },
+        testimonials: {
+            headline: 'O Que Nossos Alunos <span class="text-brand-orange">Estão Falando</span>',
+            items: [
+                { name: 'Ricardo Oliveira', initials: 'RO', text: 'Comecei com apenas R$ 50,00 e segui o método passo a passo. Hoje, ver os primeiros dividendos caindo na conta é uma sensação indescritível de liberdade!' },
+                { name: 'Fernanda Lima', initials: 'FL', text: 'Eu tinha medo de abrir o app do banco. O módulo de Organização Financeira mudou minha vida. Agora invisto todo mês com segurança.' },
+                { name: 'Carlos Mendes', initials: 'CM', text: 'O suporte do curso é sensacional. Tiram todas as dúvidas e a comunidade ajuda demais. Já recuperei o valor do investimento em 2 meses.' },
+                { name: 'Juliana Santos', initials: 'JS', text: 'Achava que investir em ações era loteria. Entendi a lógica dos fundamentos e agora tenho uma carteira sólida de Renda Variável.' },
+                { name: 'Roberto Alves', initials: 'RA', text: 'Em 1 semana eu realmente saí do zero. A didática é direta, sem enrolação. Recomendadíssimo para quem não tem tempo.' },
+                { name: 'Mariana Costa', initials: 'MC', text: 'Já tinha feito outros cursos caros e complexos. Esse foi o único que me fez colocar a mão na massa de verdade. Simples e prático.' },
+                { name: 'Lucas Torres', initials: 'LT', text: 'Investir parecia coisa de rico. Descobri que é para quem quer construir riqueza. Minha mentalidade mudou completamente.' },
+                { name: 'Beatriz Gomes', initials: 'BG', text: 'A planilha de controle é um bônus que vale ouro! Finalmente sei para onde meu dinheiro vai e quanto ele está rendendo.' },
+                { name: 'Gustavo Henrique', initials: 'GH', text: 'Segurança na Renda Fixa foi o que me atraiu. Hoje durmo tranquilo sabendo que meu dinheiro está rendendo bem mais que a poupança.' },
+                { name: 'Patricia Bueno', initials: 'PB', text: 'O melhor investimento que fiz em mim mesma esse ano. Conteúdo de altíssimo nível por um preço acessível.' }
+            ]
         },
         objection: {
             headline: '"Mas eu não tenho muito dinheiro..."',
@@ -47,6 +62,13 @@ document.addEventListener('DOMContentLoaded', () => {
         modules: {
             headline: 'O Que Você Vai <span class="text-brand-orange">Aprender</span>',
             subhead: 'Um método direto ao ponto, sem enrolação.',
+            showcase: [
+                'Curso completo investidor em 1 semana',
+                'Acesso por 12 meses',
+                'Suporte exclusivo',
+                'Mapa mental completo',
+                'Certificado de conclusão'
+            ],
             items: [
                 { img: 'assets/module-01.jpg', alt: 'Módulo 01: Primeiros Passos - Saindo do Zero' },
                 { img: 'assets/module-02.jpg', alt: 'Módulo 02: Organizando suas Finanças Pessoais' },
@@ -59,9 +81,9 @@ document.addEventListener('DOMContentLoaded', () => {
             headline: 'Por que este é o <span class="text-brand-orange">Melhor Começo</span>?',
             rows: [
                 { criteria: 'Didática para Iniciantes', course: 'Sim (Zero "Economês")', others: 'Não (Muito Técnico)', youtube: 'Confuso e Solto' },
-                { criteria: 'Método Passo a Passo', course: 'Sim (Guia Prático)', others: 'Teoria Excessiva', youtube: 'Sem Ordem Lógica' },
+                { criteria: 'Passo a Passo', course: 'Sim (Guia Prático)', others: 'Teoria Excessiva', youtube: 'Sem Ordem Lógica' },
                 { criteria: 'Suporte Direto', course: 'Sim (Tire suas dúvidas)', others: 'Demorado / Inexistente', youtube: 'Nenhum' },
-                { criteria: 'Tempo para Começar', course: 'Em 7 Dias', others: 'Meses de Estudo', youtube: 'Indefinido' }
+                { criteria: 'Evolução como Investidor', course: 'Base sólida', others: 'Lenta', youtube: 'Desorganizada' }
             ]
         },
         guarantee: {
@@ -77,12 +99,14 @@ document.addEventListener('DOMContentLoaded', () => {
             cashPrice: 'ou R$ 147,00 à vista',
             benefits: [
                 'Curso Completo Investidor em 1 Semana',
+                'Acesso por 12 meses e Atualizações',
                 'Bônus: Planilha de Controle Financeiro',
-                'Bônus: Guia de Bancos Digitais',
-                'Acesso Vitalício e Atualizações',
-                'Suporte Exclusivo para Alunos'
+                'Bônus: Mapa Mental Completo',
+                'Certificado de Conclusão',
+                'Suporte Exclusivo para Alunos',
+                'Acesso via Celular e Computador'
             ],
-            cta: 'Garantir Minha Vaga Agora',
+            cta: 'Garantir Minha Vaga',
             checkoutUrl: 'https://payment.ticto.app/O44B8A4E7'
         },
         faq: {
@@ -100,10 +124,10 @@ document.addEventListener('DOMContentLoaded', () => {
     // =========================================================================
 
     const HeroSection = () => `
-        <section class="hero-section">
+        <section class="hero-section overflow-hidden">
             <!-- Ambient Background Glow -->
-            <div class="absolute top-[-20%] left-[-10%] w-[600px] h-[600px] bg-brand-orange/10 rounded-full blur-[120px] pointer-events-none animate-pulse" style="animation-duration: 4s;"></div>
-            <div class="absolute bottom-[-10%] right-[-5%] w-[500px] h-[500px] bg-brand-orange/5 rounded-full blur-[100px] pointer-events-none"></div>
+            <div class="absolute top-[-20%] left-[-10%] w-[300px] md:w-[600px] h-[300px] md:h-[600px] bg-brand-orange/10 rounded-full blur-[120px] pointer-events-none animate-pulse" style="animation-duration: 4s;"></div>
+            <div class="absolute bottom-[-10%] right-[-5%] w-[250px] md:w-[500px] h-[250px] md:h-[500px] bg-brand-orange/5 rounded-full blur-[100px] pointer-events-none"></div>
 
             <div class="hero-container relative z-10">
                 <!-- Lado Esquerdo: Conteúdo -->
@@ -135,22 +159,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 </div>
             </div>
 
-            <!-- New Footer Benefits Bar -->
-            <!-- New Footer Benefits Bar -->
-            <div class="container mx-auto px-6 max-w-7xl mt-16 border-t border-white/10 pt-10">
-                <div class="flex flex-row justify-between items-start gap-2 md:grid md:grid-cols-3 md:gap-8 text-center reveal-up">
-                    ${DATA.hero.footerBenefits.map(item => `
-                        <div class="flex flex-col items-center gap-2 group w-1/3 md:w-full">
-                            <div class="w-10 h-10 md:w-12 md:h-12 flex items-center justify-center bg-white/5 rounded-full border border-white/10 group-hover:border-brand-orange/50 group-hover:bg-brand-orange/10 transition-all duration-300">
-                                ${item.icon === 'infinity' ? '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-gray-400 group-hover:text-brand-orange transition-colors md:w-6 md:h-6"><path d="M12 12c-2-2.67-4-4-6-4a4 4 0 1 0 0 8c2 0 4-1.33 6-4Zm0 0c2 2.67 4 4 6 4a4 4 0 1 0 0-8c-2 0-4 1.33-6 4Z"/></svg>' : ''}
-                                ${item.icon === 'certificate' ? '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-gray-400 group-hover:text-brand-orange transition-colors md:w-6 md:h-6"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>' : ''}
-                                ${item.icon === 'chat' ? '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-gray-400 group-hover:text-brand-orange transition-colors md:w-6 md:h-6"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>' : ''}
-                            </div>
-                            <span class="text-gray-300 font-medium group-hover:text-white transition-colors text-xs md:text-base leading-tight">${item.text}</span>
-                        </div>
-                    `).join('')}
-                </div>
-            </div>
+
         </section>
     `;
 
@@ -159,7 +168,6 @@ document.addEventListener('DOMContentLoaded', () => {
             <div class="container mx-auto px-6 max-w-7xl">
                 <div class="text-center max-w-3xl mx-auto mb-16 reveal-up">
                     <h2 class="font-heading text-3xl md:text-4xl font-bold text-white mb-4">${DATA.pain.headline}</h2>
-                    <p class="text-gray-400 text-lg">${DATA.pain.subhead}</p>
                 </div>
                 <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
                     ${DATA.pain.cards.map((card, i) => `
@@ -193,25 +201,66 @@ document.addEventListener('DOMContentLoaded', () => {
                             ${DATA.contrast.goodSide.items.map(item => `
                                 <li class="flex items-center gap-3 text-white"><span class="text-brand-orange font-bold text-xl">✓</span> ${item}</li>
                             `).join('')}
-                        </ul>
                     </div>
+                </div>
+
+                <div class="text-center mt-12 reveal-up">
+                    <a href="#oferta" class="inline-block py-5 px-8 md:py-6 md:px-12 bg-brand-orange text-white font-bold rounded-full shadow-lg hover:bg-orange-600 transition-all transform hover:scale-105 shadow-glow uppercase tracking-wide text-base md:text-xl whitespace-nowrap">
+                        Quero ser um investidor
+                    </a>
                 </div>
             </div>
         </section>
     `;
 
-    const ObjectionSection = () => `
-        <section class="py-24 bg-brand-black relative overflow-hidden">
-            <!-- Background Glow -->
-            <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-3xl h-full bg-brand-orange/5 blur-[100px] pointer-events-none"></div>
-            
-            <div class="container mx-auto px-6 max-w-4xl relative z-10 text-center reveal-up">
-                <h2 class="font-heading text-3xl md:text-4xl font-bold text-white mb-8">${DATA.objection.headline}</h2>
-                <p class="text-xl leading-relaxed text-gray-300 mb-8 font-light">${DATA.objection.text1}</p>
-                <p class="text-lg text-gray-500">${DATA.objection.text2}</p>
+    const TestimonialSection = () => `
+        <section class="py-24 bg-brand-dark relative overflow-hidden">
+            <div class="container mx-auto px-6 max-w-7xl relative z-10">
+                <h2 class="font-heading text-3xl md:text-4xl font-bold text-white text-center mb-16 reveal-up">${DATA.testimonials.headline}</h2>
+                
+                <div class="testimonial-slider relative w-full h-[400px] md:h-[320px] overflow-hidden reveal-up">
+                    <div class="testimonial-track absolute top-0 left-0 h-full flex transition-transform duration-500 ease-in-out" id="track">
+                        ${DATA.testimonials.items.map(item => `
+                            <div class="testimonial-card w-[calc(100vw-48px)] md:w-[400px] flex-shrink-0 px-2 md:px-4">
+                                <div class="bg-brand-gray/80 backdrop-blur-sm border border-white/5 p-8 rounded-2xl h-full flex flex-col justify-between hover:border-brand-orange/30 transition-colors">
+                                    <div class="mb-6">
+                                        <div class="flex text-brand-orange mb-3">★★★★★</div>
+                                        <p class="text-gray-300 italic text-lg leading-relaxed">"${item.text}"</p>
+                                    </div>
+                                    <div class="flex items-center gap-4">
+                                        <div class="w-12 h-12 rounded-full bg-gradient-to-br from-brand-orange to-orange-700 flex items-center justify-center text-white font-bold text-sm shadow-lg border border-white/10 flex-shrink-0">
+                                            ${item.initials}
+                                        </div>
+                                        <div class="flex-1 min-w-0">
+                                            <p class="text-white font-semibold truncate">${item.name}</p>
+                                            <p class="text-xs text-gray-500 uppercase tracking-widest">Aluno Verificado</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        `).join('')}
+                    </div>
+                </div>
+
+                <!-- Navigation Buttons -->
+                <div class="flex justify-center gap-4 mt-8">
+                    <button id="prevBtn" class="w-12 h-12 rounded-full bg-brand-gray border border-white/10 flex items-center justify-center text-white hover:bg-brand-orange hover:border-brand-orange transition-all duration-300 group shadow-lg">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="group-hover:scale-110 transition-transform"><polyline points="15 18 9 12 15 6"></polyline></svg>
+                    </button>
+                    <button id="nextBtn" class="w-12 h-12 rounded-full bg-brand-gray border border-white/10 flex items-center justify-center text-white hover:bg-brand-orange hover:border-brand-orange transition-all duration-300 group shadow-lg">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="group-hover:scale-110 transition-transform"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                </div>
+
+                <div class="text-center mt-12 reveal-up">
+                    <a href="#oferta" class="inline-block py-5 px-10 md:py-6 md:px-12 bg-brand-orange text-white font-bold rounded-full shadow-lg hover:bg-orange-600 transition-all transform hover:scale-105 shadow-glow uppercase tracking-wide text-base md:text-xl whitespace-nowrap">
+                        QUERO FAZER PARTE
+                    </a>
+                </div>
             </div>
         </section>
     `;
+
+
 
     const ModulesSection = () => `
         <section class="py-24 bg-brand-dark">
@@ -220,9 +269,10 @@ document.addEventListener('DOMContentLoaded', () => {
                     <h2 class="font-heading text-3xl md:text-4xl font-bold text-white mb-4">${DATA.modules.headline}</h2>
                     <p class="text-gray-400">${DATA.modules.subhead}</p>
                 </div>
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
+
+                <div class="flex flex-wrap justify-center gap-4 md:gap-6">
                     ${DATA.modules.items.map((m, i) => `
-                        <div class="relative group rounded-3xl overflow-hidden shadow-lg hover:shadow-glow transition-all duration-500 reveal-up" style="transition-delay: ${i * 100}ms">
+                        <div class="w-[calc(50%-8px)] sm:w-[calc(50%-12px)] lg:w-[calc(20%-20px)] relative group rounded-3xl overflow-hidden shadow-lg hover:shadow-glow transition-all duration-500 reveal-up" style="transition-delay: ${i * 100}ms">
                             <div class="w-full h-auto overflow-hidden rounded-3xl border border-white/5 group-hover:border-brand-orange transition-colors duration-300">
                                 <img src="${m.img}" alt="${m.alt}" class="w-full h-auto object-cover transform group-hover:scale-110 transition-transform duration-700">
                             </div>
@@ -236,54 +286,72 @@ document.addEventListener('DOMContentLoaded', () => {
     const DifferentialsSection = () => `
         <section class="py-24 bg-brand-black">
             <div class="container mx-auto px-6 max-w-5xl">
+                
+                <!-- Offer Block (Moved Top) -->
+                <div class="relative mb-24">
+                    <div class="absolute top-1/2 left-1/2 w-[300px] md:w-[600px] h-[300px] md:h-[600px] bg-brand-orange/5 rounded-full blur-[120px] -translate-x-1/2 -translate-y-1/2 pointer-events-none"></div>
+                    <div id="oferta" class="container mx-auto px-6 max-w-lg relative z-10">
+                        <div class="bg-brand-gray/80 backdrop-blur-xl border border-white/10 rounded-3xl overflow-hidden shadow-2xl transform hover:scale-105 transition-transform duration-500 reveal-up">
+                            <div class="bg-gradient-to-r from-brand-orange to-orange-600 p-6 text-center">
+                                <h3 class="text-white font-bold text-xl tracking-wider">${DATA.offer.headline}</h3>
+                            </div>
+                            
+                            <!-- Mockup Image Inside Offer -->
+                            <div class="px-10 pt-8 pb-0 flex justify-center">
+                                <img src="assets/course-mockup.png" alt="Curso Investidor em 1 Semana" class="w-full max-w-[350px] drop-shadow-xl hover:scale-105 transition-transform duration-500">
+                            </div>
+
+                            <div class="p-10 text-center">
+                                <p class="text-gray-400 text-lg mb-2">De <span class="line-through">${DATA.offer.oldPrice}</span> por apenas:</p>
+                                <div class="flex items-center justify-center gap-2 md:gap-3 mb-2 text-white">
+                                    <div class="flex flex-col items-end text-right leading-tight">
+                                        <span class="text-lg md:text-xl font-semibold">12x</span>
+                                        <span class="text-sm md:text-base text-gray-400">de</span>
+                                    </div>
+                                    <span class="text-5xl md:text-6xl font-black tracking-tighter text-brand-orange">R$ 15,20</span>
+                                </div>
+                                <p class="text-white font-bold text-lg mb-8">${DATA.offer.cashPrice}</p>
+                                <ul class="text-left space-y-4 mb-10 text-gray-300">
+                                    ${DATA.offer.benefits.map(b => `
+                                        <li class="flex items-start gap-3"><span class="text-brand-orange font-bold mt-1">✓</span> ${b}</li>
+                                    `).join('')}
+                                </ul>
+                                <a href="${DATA.offer.checkoutUrl}" target="_blank" rel="noopener noreferrer" class="block w-full py-4 md:py-6 px-4 md:px-8 bg-brand-orange text-white font-bold rounded-full shadow-lg hover:bg-orange-600 transition-colors uppercase tracking-wide text-sm md:text-xl mb-4 shadow-glow text-center">${DATA.offer.cta}</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
                 <h2 class="font-heading text-3xl md:text-4xl font-bold text-white text-center mb-16 reveal-up">${DATA.differentials.headline}</h2>
-                <div class="overflow-x-auto rounded-2xl border border-white/10 shadow-2xl reveal-up mb-24">
-                    <table class="w-full text-left border-collapse">
+                <div class="overflow-x-auto rounded-2xl border border-white/10 shadow-2xl reveal-up">
+                    <table class="w-full text-left border-collapse min-w-[600px] md:min-w-0">
                         <thead>
                             <tr class="bg-brand-gray text-white">
-                                <th class="p-6 font-bold border-b border-white/10">Critério</th>
-                                <th class="p-6 font-bold border-b border-brand-orange bg-brand-orange/10 text-brand-orange text-center text-lg">Investidor em 1 Semana</th>
-                                <th class="p-6 font-bold border-b border-white/10 text-gray-400 text-center">Outros Cursos</th>
-                                <th class="p-6 font-bold border-b border-white/10 text-gray-400 text-center">Youtube "De Graça"</th>
+                                <th class="p-3 md:p-6 font-bold border-b border-white/10 text-sm md:text-base">Critério</th>
+                                <th class="p-3 md:p-6 font-bold border-b border-brand-orange bg-brand-orange/10 text-brand-orange text-center text-sm md:text-lg">Investidor em 1 Semana</th>
+                                <th class="p-3 md:p-6 font-bold border-b border-white/10 text-gray-400 text-center text-sm md:text-base">Outros Cursos</th>
+                                <th class="p-3 md:p-6 font-bold border-b border-white/10 text-gray-400 text-center text-sm md:text-base">Youtube "De Graça"</th>
                             </tr>
                         </thead>
                         <tbody class="bg-brand-dark">
                             ${DATA.differentials.rows.map(row => `
                                 <tr class="border-b border-white/5">
-                                    <td class="p-6 text-white font-medium">${row.criteria}</td>
-                                    <td class="p-6 text-center bg-brand-orange/5 border-x border-brand-orange/20 text-white"><span class="text-brand-orange font-bold">✓</span> ${row.course}</td>
-                                    <td class="p-6 text-center text-gray-500"><span class="text-red-500 font-bold">✗</span> ${row.others}</td>
-                                    <td class="p-6 text-center text-gray-500"><span class="text-red-500 font-bold">✗</span> ${row.youtube}</td>
+                                    <td class="p-3 md:p-6 text-white font-medium text-sm md:text-base">${row.criteria}</td>
+                                    <td class="p-3 md:p-6 text-center bg-brand-orange/5 border-x border-brand-orange/20 text-white text-sm md:text-base"><span class="text-brand-orange font-bold">✓</span> ${row.course}</td>
+                                    <td class="p-3 md:p-6 text-center text-gray-500 text-sm md:text-base"><span class="text-red-500 font-bold">✗</span> ${row.others}</td>
+                                    <td class="p-3 md:p-6 text-center text-gray-500 text-sm md:text-base"><span class="text-red-500 font-bold">✗</span> ${row.youtube}</td>
                                 </tr>
                             `).join('')}
                         </tbody>
                     </table>
                 </div>
-                <!-- Guarantee Block Removed -->
-                <!-- Offer Block -->
-                <div class="absolute top-1/2 left-1/2 w-[600px] h-[600px] bg-brand-orange/5 rounded-full blur-[120px] -translate-x-1/2 -translate-y-1/2 pointer-events-none"></div>
-                <div id="oferta" class="container mx-auto px-6 max-w-lg relative z-10">
-                    <div class="bg-brand-gray/80 backdrop-blur-xl border border-white/10 rounded-3xl overflow-hidden shadow-2xl transform hover:scale-105 transition-transform duration-500 reveal-up">
-                        <div class="bg-gradient-to-r from-brand-orange to-orange-600 p-6 text-center">
-                            <h3 class="text-white font-bold text-xl tracking-wider">${DATA.offer.headline}</h3>
-                        </div>
-                        <div class="p-10 text-center">
-                            <p class="text-gray-400 text-lg mb-2">De <span class="line-through">${DATA.offer.oldPrice}</span> por apenas:</p>
-                            <div class="flex items-center justify-center gap-2 mb-2 text-white">
-                                <span class="text-2xl font-semibold">${DATA.offer.installments}</span>
-                                <span class="text-6xl font-black tracking-tighter text-brand-orange">${DATA.offer.price}</span>
-                            </div>
-                            <p class="text-white font-bold text-lg mb-8">${DATA.offer.cashPrice}</p>
-                            <ul class="text-left space-y-4 mb-10 text-gray-300">
-                                ${DATA.offer.benefits.map(b => `
-                                    <li class="flex items-start gap-3"><span class="text-brand-orange font-bold mt-1">✓</span> ${b}</li>
-                                `).join('')}
-                            </ul>
-                            <a href="${DATA.offer.checkoutUrl}" target="_blank" rel="noopener noreferrer" class="block w-full py-4 bg-brand-orange text-white font-bold rounded-full shadow-lg hover:bg-orange-600 transition-colors uppercase tracking-wide text-lg mb-4 shadow-glow">${DATA.offer.cta}</a>
-                            <p class="text-gray-500 text-sm flex items-center justify-center gap-2">🔒 Pagamento 100% Seguro</p>
-                        </div>
-                    </div>
+
+                <div class="text-center mt-12 reveal-up">
+                    <a href="#oferta" class="inline-block py-5 px-10 md:py-6 md:px-12 bg-brand-orange text-white font-bold rounded-full shadow-lg hover:bg-orange-600 transition-all transform hover:scale-105 shadow-glow uppercase tracking-wide text-base md:text-xl whitespace-nowrap">
+                        Quero começar agora
+                    </a>
                 </div>
+
             </div>
         </section>
     `;
@@ -312,16 +380,20 @@ document.addEventListener('DOMContentLoaded', () => {
     const FooterSection = () => `
         <footer class="py-12 bg-black border-t border-white/10">
             <div class="container mx-auto px-6 text-center">
-                <div class="mb-8">
-                    <h3 class="text-2xl font-heading font-bold text-white">Bruno Rabelo</h3>
-                    <p class="text-gray-500">Investidor em 1 Semana</p>
-                </div>
-                <div class="flex justify-center gap-8 mb-8 text-sm text-gray-400">
+
+                <div class="flex flex-col md:flex-row justify-center gap-4 md:gap-8 mb-8 text-sm text-gray-400">
                     <a href="#" class="hover:text-brand-orange transition-colors">Termos de Uso</a>
                     <a href="#" class="hover:text-brand-orange transition-colors">Política de Privacidade</a>
                     <a href="#" class="hover:text-brand-orange transition-colors">Contato</a>
                 </div>
-                <p class="text-gray-600 text-sm">&copy; 2024 Bruno Rabelo. Todos os direitos reservados.</p>
+
+                <!-- Disclaimer Section -->
+                <div class="max-w-5xl mx-auto mb-6 text-left border-t border-white/5 pt-6">
+                    <p class="text-gray-700 text-[10px] leading-tight mb-2"><span class="font-medium">Aviso Legal e Compliance</span> — As informações disponibilizadas neste site têm caráter exclusivamente educacional e informativo, não constituindo, em hipótese alguma, oferta, recomendação, indicação ou solicitação de compra ou venda de valores mobiliários, ativos financeiros, produtos ou serviços de investimento, nos termos da regulamentação da Comissão de Valores Mobiliários (CVM). Os conteúdos apresentados não devem ser interpretados como consultoria, análise ou recomendação personalizada, nos termos da Resolução CVM nº 19/2021 e demais normas aplicáveis. Decisões de investimento devem ser tomadas com base na avaliação do perfil do investidor, objetivos financeiros, horizonte de investimento e tolerância a risco, preferencialmente com o apoio de um profissional habilitado.</p>
+                    <p class="text-gray-700 text-[10px] leading-tight"><span class="font-medium">Perfil do Investidor (Suitability)</span> — Os investimentos e estratégias eventualmente mencionados neste site podem não ser adequados a todos os perfis de investidores. Antes de investir, é fundamental que o investidor realize a avaliação de seu Perfil de Investidor (Suitability), conforme exigido pela regulamentação da CVM e pelas regras da ANBIMA. A definição do perfil de investidor é condição essencial para a adequação de qualquer produto ou estratégia de investimento. Rentabilidade passada não representa garantia de rentabilidade futura. Investimentos envolvem riscos e podem resultar em perdas patrimoniais.</p>
+                </div>
+
+                <p class="text-gray-600 text-sm">&copy; 2025 Investidor em 1 Semana. Todos os direitos reservados.</p>
             </div>
         </footer>
     `;
@@ -335,14 +407,16 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!app) return;
 
         app.innerHTML = `
-            ${HeroSection()}
-            ${PainSection()}
-            ${ContrastSection()}
-            ${ObjectionSection()}
-            ${ModulesSection()}
-            ${DifferentialsSection()}
-            ${FAQSection()}
-            ${FooterSection()}
+            <div class="overflow-hidden w-full max-w-[100vw]">
+                ${HeroSection()}
+                ${ContrastSection()}
+                ${TestimonialSection()}
+                ${PainSection()}
+                ${ModulesSection()}
+                ${DifferentialsSection()}
+
+                ${FooterSection()}
+            </div>
         `;
 
         initInteractions();
@@ -353,38 +427,71 @@ document.addEventListener('DOMContentLoaded', () => {
     // =========================================================================
 
     const initInteractions = () => {
-        // FAQ Logic
-        document.querySelectorAll('.faq-question').forEach(question => {
-            question.addEventListener('click', () => {
-                const item = question.parentElement;
-                const answer = item.querySelector('.faq-answer');
-                const isOpen = item.classList.contains('active');
 
-                document.querySelectorAll('.faq-item').forEach(otherItem => {
-                    if (otherItem !== item) {
-                        otherItem.classList.remove('active');
-                        otherItem.querySelector('.faq-answer').style.maxHeight = null;
-                        otherItem.querySelector('span').textContent = '+';
-                        otherItem.querySelector('span').classList.remove('text-white');
-                        otherItem.querySelector('span').classList.add('text-brand-orange');
+        // Testimonial Carousel Logic
+        // Testimonial Carousel Logic (Infinite Loop with Clones)
+        const track = document.getElementById('track');
+        if (track) {
+            const originalCards = Array.from(track.children);
+            const totalOriginal = originalCards.length;
+            const isMobile = window.innerWidth < 768;
+            const clonesCount = isMobile ? 1 : 3; // 1 on mobile, 3 on desktop
+
+            // Create Clones
+            const firstClones = originalCards.slice(0, clonesCount).map(c => c.cloneNode(true));
+            const lastClones = originalCards.slice(-clonesCount).map(c => c.cloneNode(true));
+
+            // Inject Clones
+            firstClones.forEach(c => track.appendChild(c));
+            lastClones.reverse().forEach(c => track.insertBefore(c, track.firstChild));
+
+            let currentIndex = clonesCount; // Start at first real item
+            let isTransitioning = false;
+
+            const updateTrack = (animate = true) => {
+                const cardWidth = originalCards[0].offsetWidth;
+                track.style.transition = animate ? 'transform 0.5s ease-in-out' : 'none';
+                track.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
+            };
+
+            // Initial Position
+            setTimeout(() => updateTrack(false), 50);
+
+            const handleNext = () => {
+                if (isTransitioning) return;
+                isTransitioning = true;
+                currentIndex++;
+                updateTrack(true);
+
+                setTimeout(() => {
+                    if (currentIndex >= totalOriginal + clonesCount) {
+                        currentIndex = clonesCount; // Jump to real start
+                        updateTrack(false);
                     }
-                });
+                    isTransitioning = false;
+                }, 500);
+            };
 
-                if (isOpen) {
-                    item.classList.remove('active');
-                    answer.style.maxHeight = null;
-                    question.querySelector('span').textContent = '+';
-                    question.querySelector('span').classList.remove('text-white');
-                    question.querySelector('span').classList.add('text-brand-orange');
-                } else {
-                    item.classList.add('active');
-                    answer.style.maxHeight = answer.scrollHeight + "px";
-                    question.querySelector('span').textContent = '-';
-                    question.querySelector('span').classList.remove('text-brand-orange');
-                    question.querySelector('span').classList.add('text-white');
-                }
-            });
-        });
+            const handlePrev = () => {
+                if (isTransitioning) return;
+                isTransitioning = true;
+                currentIndex--;
+                updateTrack(true);
+
+                setTimeout(() => {
+                    if (currentIndex < clonesCount) {
+                        currentIndex = currentIndex + totalOriginal; // Jump to real end
+                        updateTrack(false);
+                    }
+                    isTransitioning = false;
+                }, 500);
+            };
+
+            document.getElementById('nextBtn')?.addEventListener('click', handleNext);
+            document.getElementById('prevBtn')?.addEventListener('click', handlePrev);
+            window.addEventListener('resize', () => updateTrack(false));
+        }
+
 
         // Smooth Scroll
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {

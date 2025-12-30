@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="pt-BR" class="scroll-smooth">
+<html lang="pt-BR" class="scroll-smooth overflow-x-hidden">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Investidor em 1 Semana - Bruno Rabelo</title>
+    <title>Investidor em 1 Semana</title>
     <meta name="description"
-        content="Domine o mercado financeiro e comece a investir com segurança em apenas 1 semana com Bruno Rabelo.">
+        content="Domine o mercado financeiro e comece a investir com segurança em apenas 1 semana.">
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -20,7 +20,7 @@
     <script>
         tailwind.config = {
             theme: {
-                extend: {De
+                extend: {
                     colors: {
                         brand: {
                             black: '#0a0a0a',
@@ -54,18 +54,11 @@
     <div class="cursor-dot" data-cursor-dot></div>
     <div class="cursor-outline" data-cursor-outline></div>
 
-    <!-- Sticky CTA Mobile -->
-    <div
-        class="fixed bottom-0 left-0 w-full bg-brand-black/90 backdrop-blur-md p-4 z-50 md:hidden border-t border-white/10">
-        <a href="#oferta"
-            class="block w-full bg-brand-orange text-white font-bold text-center py-3 rounded-full uppercase tracking-wider shadow-lg">
-            Quero Minha Vaga
-        </a>
-    </div>
+
 
     <!-- === APP CONTAINER === -->
     <!-- Content is injected by script.js -->
-    <div id="app"></div>
+    <div id="app" class="overflow-hidden w-full max-w-[100vw]"></div>
 
     <script src="script.js"></script>
 </body>
